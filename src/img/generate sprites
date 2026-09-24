@@ -1,0 +1,25 @@
+./spreet --sdf sprite sprite_list
+sprite es la carpeta con los iconos
+sprite_list genera un sprite_list.png y un sprite_list.json 
+meter en una carpeta la carpeta sprite con los iconos,mas sprite_list.png y sprite_list.json RENOMBRADOS como sprite.png y un sprite.json (o bien como 2º parametro,poner sprite)
+En el estilo.json poner   "sprite": "./carpetaContenedora/sprite"
+Si lo cargo desde martin:
+  En el yml,poner:
+    sprites:
+      paths:
+        # all SVG files in this dir will be published as a "my_images" sprite source
+        /home/stanis/Desktop/martin/sprite
+  Y desde maputnik,se accede como:
+     http://0.0.0.0:3000/sprite/sprite
+https://github.com/flother/spreet
+
+Desde martin:
+    Descargar:
+        http://0.0.0.0:3000/sprite/sprite.json
+        http://0.0.0.0:3000/sprite/sprite.png
+    Editar los que necesiten sdf en el json,por ejemplo:
+        "peak":{"height":8,"pixelRatio":1,"width":8,"x":160,"y":210,"sdf":true}
+
+Con spritezero-cli sprite/ es la carpeta, sprite@2x el nombre de los resultados, --retina para que el tamaño sea doble
+spritezero sprite@2x sprite/ --retina
+spritezero sprite sprite/

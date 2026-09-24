@@ -1,0 +1,789 @@
+{
+    "ETI_AUTOVIAS": {
+        "x": 200,
+        "y": 160,
+        "width": 63,
+        "height": 15,
+        "pixelRatio": 1,
+        "sdf": false
+    },
+
+    "ETI_AUTOPISTAS": {
+        "x": 390,
+        "y": 50,
+        "width": 420,
+        "height": 150,
+        "pixelRatio": 7,
+        "sdf": false
+    },
+
+    "ETI_CTRA_PPAL": {
+        "x": 1040,
+        "y": 80,
+        "width": 340,
+        "height": 110,
+        "pixelRatio": 1,
+        "sdf": false
+    },
+
+    "ETI_CTRA_PRI": {
+        "x": 1390,
+        "y": 80,
+        "width": 340,
+        "height": 110,
+        "pixelRatio": 1,
+        "sdf": false
+    },
+
+    "ETI_CTRA_SEG": {
+        "x": 1750,
+        "y": 50,
+        "width": 340,
+        "height": 110,
+        "pixelRatio": 1,
+        "sdf": false
+    },
+
+    "ETI_CTRA_TER": {
+        "x": 2100,
+        "y": 80,
+        "width": 340,
+        "height": 110,
+        "pixelRatio": 1,
+        "sdf": false
+    },
+
+    "ETI_CTRA_NC": {
+        "x": 200,
+        "y": 360,
+        "width": 63,
+        "height": 15,
+        "pixelRatio": 1,
+        "sdf": false
+    },
+
+    "ETI_MONUME": {
+        "x": 430,
+        "y": 230,
+        "width": 63,
+        "height": 180,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_MONUME_CRUZ": {
+        "x": 542,
+        "y": 230,
+        "width": 68,
+        "height": 180,
+        "pixelRatio": 6,
+        "sdf": false
+    },
+
+    "ETI_MINA_P": {
+        "x": 650,
+        "y": 230,
+        "width": 120,
+        "height": 180,
+        "pixelRatio": 10,
+        "sdf": false
+    },
+
+    "ETI_ANTENA": {
+        "x": 800,
+        "y": 230,
+        "width": 95,
+        "height": 180,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_YAC_ARQ": {
+        "x": 915,
+        "y": 230,
+        "width": 130,
+        "height": 180,
+        "pixelRatio": 6,
+        "sdf": false
+    },
+
+    "ETI_CUEVA": {
+        "x": 1050,
+        "y": 230,
+        "width": 130,
+        "height": 180,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_CASCADA": {
+        "x": 1180,
+        "y": 230,
+        "width": 150,
+        "height": 180,
+        "pixelRatio": 7,
+        "sdf": false
+    },
+
+    "ETI_HOSPITAL": {
+        "x": 1320,
+        "y": 230,
+        "width": 150,
+        "height": 180,
+        "pixelRatio": 6,
+        "sdf": false
+    },
+
+    "ETI_OTR_C_S": {
+        "x": 1467,
+        "y": 230,
+        "width": 130,
+        "height": 180,
+        "pixelRatio": 6,
+        "sdf": false
+    },
+
+    "ETI_RES_MAY": {
+        "x": 1590,
+        "y": 230,
+        "width": 105,
+        "height": 180,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_RES_EST": {
+        "x": 1700,
+        "y": 230,
+        "width": 125,
+        "height": 170,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_ALBERG": {
+        "x": 1810,
+        "y": 230,
+        "width": 150,
+        "height": 180,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_BALNE": {
+        "x": 1930,
+        "y": 230,
+        "width": 150,
+        "height": 180,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_PARAD": {
+        "x": 2090,
+        "y": 230,
+        "width": 205,
+        "height": 180,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_METRO": {
+        "x": 2320,
+        "y": 230,
+        "width": 130,
+        "height": 180,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_MUSEO": {
+        "x": 63,
+        "y": 410,
+        "width": 115,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_C_INTER": {
+        "x": 198,
+        "y": 410,
+        "width": 118,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_C_CULT": {
+        "x": 350,
+        "y": 410,
+        "width": 125,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_ARCH_BIBLI": {
+        "x": 492,
+        "y": 410,
+        "width": 125,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_TEA_AUDI": {
+        "x": 640,
+        "y": 410,
+        "width": 105,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_ZON_COMER": {
+        "x": 772,
+        "y": 410,
+        "width": 110,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_REC_FECON": {
+        "x": 910,
+        "y": 410,
+        "width": 110,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_OTR_CULTOC": {
+        "x": 1045,
+        "y": 410,
+        "width": 93,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_INVES": {
+        "x": 1150,
+        "y": 410,
+        "width": 93,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_OBS_ESP": {
+        "x": 1300,
+        "y": 410,
+        "width": 93,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_ORD_SEG": {
+        "x": 1424,
+        "y": 410,
+        "width": 78,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_EMERG": {
+        "x": 1518,
+        "y": 410,
+        "width": 120,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_AYUNT": {
+        "x": 1650,
+        "y": 410,
+        "width": 120,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_RAP": {
+        "x": 1780,
+        "y": 410,
+        "width": 120,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_OTR_SI": {
+        "x": 1920,
+        "y": 410,
+        "width": 120,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_AGROP": {
+        "x": 2060,
+        "y": 410,
+        "width": 141,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_CDNU": {
+        "x": 2220,
+        "y": 412,
+        "width": 100,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_TRAMLFUN": {
+        "x": 2315,
+        "y": 412,
+        "width": 100,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_C_UNI": {
+        "x": 63,
+        "y": 605,
+        "width": 130,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_OTR_CD": {
+        "x": 205,
+        "y": 587,
+        "width": 120,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_HITO": {
+        "x": 340,
+        "y": 587,
+        "width": 95,
+        "height": 128,
+        "pixelRatio": 7,
+        "sdf": false
+    },
+
+    "ETI_P_ACO": {
+        "x": 455,
+        "y": 587,
+        "width": 95,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_MANANTIAL": {
+        "x": 575,
+        "y": 587,
+        "width": 85,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_FUENTE": {
+        "x": 660,
+        "y": 587,
+        "width": 140,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_POZO": {
+        "x": 810,
+        "y": 587,
+        "width": 85,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_BOC_HID": {
+        "x": 910,
+        "y": 587,
+        "width": 85,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_ARBOL": {
+        "x": 1016,
+        "y": 587,
+        "width": 88,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "PAT_TAP/MUR": {
+        "x": 1150,
+        "y": 587,
+        "width": 88,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "PAT_MUR_CON": {
+        "x": 1300,
+        "y": 587,
+        "width": 88,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "PAT_ALAM": {
+        "x": 1415,
+        "y": 587,
+        "width": 88,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_TUNEL": {
+        "x": 1559,
+        "y": 587,
+        "width": 100,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "PAT_ACUE": {
+        "x": 1690,
+        "y": 587,
+        "width": 100,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_YAC_ARQ_S": {
+        "x": 1815,
+        "y": 587,
+        "width": 88,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_MIRAD": {
+        "x": 1925,
+        "y": 587,
+        "width": 100,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_ZONA_ACA": {
+        "x": 2055,
+        "y": 587,
+        "width": 115,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_AREA_REC": {
+        "x": 2100,
+        "y": 587,
+        "width": 115,
+        "height": 128,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_ESTFFCC": {
+        "x": 2300,
+        "y": 587,
+        "width": 117,
+        "height": 129,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_GR": {
+        "x": 58,
+        "y": 787,
+        "width": 400,
+        "height": 115,
+        "pixelRatio": 6,
+        "sdf": false
+    },
+
+    "ETI_PR": {
+        "x": 480,
+        "y": 765,
+        "width": 430,
+        "height": 120,
+        "pixelRatio": 6,
+        "sdf": false
+    },
+
+    "ETI_CR": {
+        "x": 922,
+        "y": 770,
+        "width": 140,
+        "height": 160,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_CS": {
+        "x": 1060,
+        "y": 770,
+        "width": 115,
+        "height": 165,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_VV": {
+        "x": 1210,
+        "y": 770,
+        "width": 115,
+        "height": 165,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+    
+
+    "ETI_CC": {
+        "x": 1350,
+        "y": 770,
+        "width": 115,
+        "height": 165,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_CN": {
+        "x": 1485,
+        "y": 770,
+        "width": 115,
+        "height": 165,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_ITI_OTR": {
+        "x": 1625,
+        "y": 770,
+        "width": 115,
+        "height": 165,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_INF_TRA_ES": {
+        "x": 1760,
+        "y": 770,
+        "width": 130,
+        "height": 165,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_INF_TRA_EA": {
+        "x": 1905,
+        "y": 770,
+        "width": 115,
+        "height": 165,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_INF_TRA_AS": {
+        "x": 2035,
+        "y": 770,
+        "width": 350,
+        "height": 165,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+
+    "ETI_PARKING": {
+        "x": 57,
+        "y": 950,
+        "width": 120,
+        "height": 128,
+        "pixelRatio": 6,
+        "sdf": false
+    },
+
+    "ETI_MEREND": {
+        "x": 205,
+        "y": 950,
+        "width": 130,
+        "height": 128,
+        "pixelRatio": 6,
+        "sdf": false
+    },
+
+    "ETI_INF_TRA_AP": {
+        "x": 340,
+        "y": 945,
+        "width": 130,
+        "height": 140,
+        "pixelRatio": 6,
+        "sdf": false
+    },
+
+    "ETI_INF_TRA_AI": {
+        "x": 485,
+        "y": 945,
+        "width": 230,
+        "height": 140,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_INF_TRA_AD": {
+        "x": 715,
+        "y": 945,
+        "width": 130,
+        "height": 140,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_INF_TRA_APS": {
+        "x": 850,
+        "y": 945,
+        "width": 180,
+        "height": 140,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_CAMP": {
+        "x": 1050,
+        "y": 945,
+        "width": 155,
+        "height": 140,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_PARTEMOC": {
+        "x": 1200,
+        "y": 945,
+        "width": 155,
+        "height": 140,
+        "pixelRatio": 4,
+        "sdf": false
+    },
+
+    "ETI_NODO_INF_T": {
+        "x": 1330,
+        "y": 945,
+        "width": 125,
+        "height": 140,
+        "pixelRatio": 6,
+        "sdf": false
+    },
+
+    "ETI_TELESILLA": {
+        "x": 1482,
+        "y": 945,
+        "width": 90,
+        "height": 140,
+        "pixelRatio": 6,
+        "sdf": false
+    },
+
+    "ETI_TELESQUI": {
+        "x": 1590,
+        "y": 945,
+        "width": 90,
+        "height": 140,
+        "pixelRatio": 6,
+        "sdf": false
+    },
+
+    "ETI_TELEFERICO": {
+        "x": 1715,
+        "y": 945,
+        "width": 95,
+        "height": 140,
+        "pixelRatio": 6,
+        "sdf": false
+    },
+
+    "ETI_BALIZA": {
+        "x": 1853,
+        "y": 945,
+        "width": 100,
+        "height": 140,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_EXT_COMB": {
+        "x": 1980,
+        "y": 945,
+        "width": 100,
+        "height": 140,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_ZON_AUTO": {
+        "x": 2080,
+        "y": 945,
+        "width": 180,
+        "height": 140,
+        "pixelRatio": 5,
+        "sdf": false
+    },
+
+    "ETI_PTO_REC_VH": {
+        "x": 2240,
+        "y": 945,
+        "width": 150,
+        "height": 140,
+        "pixelRatio": 3,
+        "sdf": false
+    },
+
+    "ETI_ACC_ESTSUB": {
+        "x": 57,
+        "y": 1120,
+        "width": 120,
+        "height": 128,
+        "pixelRatio": 4,
+        "sdf": false
+    }
+
+    
+
+}

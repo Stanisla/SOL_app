@@ -1,0 +1,6363 @@
+{
+  "version": 8,
+  "name": "euskadi",
+  "metadata": {
+    "maputnik:renderer": "mbgljs"
+  },
+  "sources": {
+    "euskadi": {
+      "type": "vector",
+      "tiles": [
+        "vector://./data/mapExample.pmtiles/{z}/{x}/{y}"
+      ],
+      "maxzoom": 14
+    }
+  },
+  "sprite": "http://localhost:8100/img/sprite",
+  "glyphs": "http://localhost:8100/font/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "natural_bare_rock",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 10,
+      "filter": ["all", ["in", "natural", "bare_rock", "blockfield", "scree"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#ede4db", "fill-opacity": 0.8}
+    },
+    {
+      "id": "natural_bare_rock-pattern",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 13,
+      "filter": ["all", ["in", "natural", "bare_rock", "blockfield", "scree"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#ede4db", "fill-pattern": "rock2"}
+    },
+    {
+      "id": "natural_beach",
+      "type": "fill",
+      "metadata": {"maputnik:comment": "falta por hacer mareas"},
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 10,
+      "filter": ["all", ["==", "natural", "beach"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#fff1bb"}
+    },
+    {
+      "id": "natural_beach-pattern",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 13,
+      "filter": ["all", ["in", "natural", "beach"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#ede4db", "fill-pattern": "beach"}
+    },
+    {
+      "id": "natural_bay",
+      "type": "fill",
+      "metadata": {"maputnik:comment": "falta por hacer mareas"},
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 10,
+      "filter": ["all", ["==", "natural", "bay"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#7FBAFA", "fill-opacity": 0.8}
+    },
+    {
+      "id": "natural_glacier",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 6,
+      "filter": ["all", ["==", "natural", "glacier"]],
+      "paint": {"fill-color": "#deeded"}
+    },
+    {
+      "id": "natural_grassland",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 6,
+      "filter": ["all", ["==", "natural", "grassland"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#cdebb0"}
+    },
+    {
+      "id": "natural_reef",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 6,
+      "filter": ["all", ["==", "natural", "reef"]],
+      "paint": {"fill-color": "#a2cede"}
+    },
+    {
+      "id": "natural_sand",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 11,
+      "filter": ["all", ["==", "natural", "sand"]],
+      "paint": {"fill-color": "#f5e9c6"}
+    },
+    {
+      "id": "natural_shingle",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 11,
+      "filter": ["all", ["==", "natural", "shingle"]],
+      "paint": {"fill-color": "#ece4db"}
+    },
+    {
+      "id": "natural_shoal",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 11,
+      "filter": ["all", ["==", "natural", "shoal"]],
+      "paint": {"fill-color": "#fff1bb"}
+    },
+    {
+      "id": "natural_scrub",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 6,
+      "filter": ["all", ["==", "natural", "scrub"]],
+      "paint": {
+        "fill-color": "#c9d8ad",
+        "fill-outline-color": {"stops": [[6, "#c9d8ad"], [10, "#6A846A"]]}
+      }
+    },
+    {
+      "id": "natural_scrub-pattern",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 13,
+      "filter": ["all", ["==", "natural", "scrub"]],
+      "paint": {
+        "fill-color": "#c9d8ad",
+        "fill-outline-color": "#6A846A",
+        "fill-pattern": "scrub"
+      }
+    },
+    {
+      "id": "natural_tundra",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 10,
+      "filter": ["all", ["==", "natural", "tundra"]],
+      "paint": {"fill-color": "#ceecb2"}
+    },
+    {
+      "id": "natural_wood",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 6,
+      "filter": ["all", ["==", "natural", "wood"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#acd29c"}
+    },
+    {
+      "id": "natural_wood-pattern",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 11,
+      "filter": ["all", ["==", "natural", "wood"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#b4c8cb",
+        "fill-pattern": [
+          "case",
+          ["==", ["get", "leaf_type"], "broadleaved"],
+          "broadleved",
+          ["==", ["get", "leaf_type"], "needleleaved"],
+          "needleleaved",
+          ["==", ["get", "leaf_type"], "mixed"],
+          "leaftype_unknown",
+          ["==", ["get", "leaf_type"], "leafless"],
+          "leafless",
+          "leaftype_unknown"
+        ],
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "natural_arete",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 13,
+      "filter": ["all", ["==", "natural", "arete"]],
+      "paint": {
+        "line-color": "rgba(109, 99, 99, 1)",
+        "line-width": 8,
+        "line-pattern": "arete"
+      }
+    },
+    {
+      "id": "natural_cliff",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 13,
+      "filter": ["all", ["==", "natural", "cliff"]],
+      "paint": {
+        "line-color": "rgba(109, 99, 99, 1)",
+        "line-width": 8,
+        "line-pattern": "cliff"
+      }
+    },
+    {
+      "id": "landuse_residential",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 8,
+      "filter": ["all", ["==", "landuse", "residential"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#dadada", "fill-outline-color": "#CCC6C6"}
+    },
+    {
+      "id": "landuse_industrial",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 8,
+      "filter": ["all", ["==", "landuse", "industrial"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#e6d1e3"}
+    },
+    {
+      "id": "landuse_allotments",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["in", "landuse", "flowerbed", "allotments"]],
+      "paint": {"fill-color": "#cae2c0"}
+    },
+    {
+      "id": "landuse_allotments-pattern",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 15,
+      "filter": ["all", ["in", "landuse", "flowerbed", "allotments"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#cae2c0", "fill-pattern": "flowerbed"}
+    },
+    {
+      "id": "landuse_basin",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "basin"]],
+      "paint": {"fill-color": "#aad3df"}
+    },
+    {
+      "id": "landuse_brownfield",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 9,
+      "filter": ["all", ["==", "landuse", "brownfield"]],
+      "paint": {"fill-color": "#c7c7b4"}
+    },
+    {
+      "id": "landuse_cemetery",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "cemetery"]],
+      "paint": {"fill-color": "#acccb1"}
+    },
+    {
+      "id": "landuse_commercial",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 9,
+      "filter": ["all", ["==", "landuse", "commercial"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#eecfcf"}
+    },
+    {
+      "id": "landuse_farmland",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 9,
+      "filter": ["all", ["==", "landuse", "farmland"]],
+      "paint": {"fill-color": "#eff0d6"}
+    },
+    {
+      "id": "landuse_farmyard",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "farmyard"]],
+      "paint": {"fill-color": "#eacca4"}
+    },
+    {
+      "id": "landuse_forest",
+      "type": "fill",
+      "metadata": {"maputnik:comment": "falta pattern"},
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 4,
+      "filter": ["all", ["==", "landuse", "forest"]],
+      "paint": {"fill-color": "#acd29c"}
+    },
+    {
+      "id": "landuse_forest-pattern",
+      "type": "fill",
+      "metadata": {"maputnik:comment": "falta pattern"},
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "forest"]],
+      "paint": {
+        "fill-color": "#b4c8cb",
+        "fill-pattern": [
+          "case",
+          ["==", ["get", "leaf_type"], "broadleaved"],
+          "broadleved",
+          ["==", ["get", "leaf_type"], "needleleaved"],
+          "needleleaved",
+          ["==", ["get", "leaf_type"], "mixed"],
+          "leaftype_unknown",
+          ["==", ["get", "leaf_type"], "leafless"],
+          "leafless",
+          "leaftype_unknown"
+        ],
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "landuse_garages",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "garages"]],
+      "paint": {"fill-color": "#deddcc"}
+    },
+    {
+      "id": "landuse_grass",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "grass"]],
+      "paint": {"fill-color": "#ceecb2"}
+    },
+    {
+      "id": "landuse_greenfield",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 9,
+      "filter": ["all", ["==", "landuse", "greenfield"]],
+      "paint": {"fill-color": "#f1eee8"}
+    },
+    {
+      "id": "landuse_greenhouse_horticulture",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "greenhouse_horticulture"]],
+      "paint": {"fill-color": "#eff0d6"}
+    },
+    {
+      "id": "landuse_landfill",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 9,
+      "filter": ["all", ["==", "landuse", "landfill"]],
+      "paint": {"fill-color": "#b6b690"}
+    },
+    {
+      "id": "landuse_meadow",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "meadow"]],
+      "paint": {"fill-color": "#ceecb2"}
+    },
+    {
+      "id": "landuse_military",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "military"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#f3e4de"}
+    },
+    {
+      "id": "landuse_orchard",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "orchard"]],
+      "paint": {"fill-color": "#abdfa0"}
+    },
+    {
+      "id": "landuse_plant_nursery",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "plant_nursery"]],
+      "paint": {"fill-color": "#addea1"}
+    },
+    {
+      "id": "landuse_quarry",
+      "type": "fill",
+      "metadata": {"maputnik:comment": "falta pattern"},
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "quarry"]],
+      "paint": {
+        "fill-color": "#c4c2c2",
+        "fill-outline-color": {"stops": [[6, "#c4c2c2"], [10, "#6D6C6C"]]}
+      }
+    },
+    {
+      "id": "landuse_quarry-pattern",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 12,
+      "filter": ["all", ["in", "landuse", "quarry"]],
+      "paint": {"fill-color": "#c4c2c2", "fill-pattern": "quarry"}
+    },
+    {
+      "id": "landuse_railway",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 9,
+      "filter": ["all", ["==", "landuse", "railway"]],
+      "paint": {"fill-color": "#e6d1e3"}
+    },
+    {
+      "id": "landuse_recreation_ground",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "recreation_ground"]],
+      "paint": {"fill-color": "#cbfacf", "fill-outline-color": "#a0dba5"}
+    },
+    {
+      "id": "landuse_religious",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "religious"]],
+      "paint": {"fill-color": "#cecdca"}
+    },
+    {
+      "id": "landuse_reservoir",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "reservoir"]],
+      "paint": {"fill-color": "#aad3df"}
+    },
+    {
+      "id": "landuse_retail",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "retail"]],
+      "paint": {"fill-color": "#fecac5"}
+    },
+    {
+      "id": "landuse_salt pond",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "salt pond"]],
+      "paint": {"fill-color": "#aad3df"}
+    },
+    {
+      "id": "landuse_village_green",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "village_green"]],
+      "paint": {"fill-color": "#ceecb2"}
+    },
+    {
+      "id": "landuse_vineyard",
+      "type": "fill",
+      "metadata": {"maputnik:comment": "falta pattern"},
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 4,
+      "filter": ["all", ["==", "landuse", "vineyard"]],
+      "paint": {"fill-color": "#ace0a1"}
+    },
+    {
+      "id": "landuse_vineyard-pattern",
+      "type": "fill",
+      "metadata": {"maputnik:comment": "falta pattern"},
+      "source": "euskadi",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "landuse", "vineyard"]],
+      "paint": {"fill-color": "#ace0a1", "fill-pattern": "vineyard"}
+    },
+    {
+      "id": "landuse_power",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "power",
+      "minzoom": 11,
+      "filter": ["all", ["in", "power", "plant", "substation"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#e2cbde", "fill-outline-color": "#B8B8B8"}
+    },
+    {
+      "id": "leisure_garden",
+      "type": "fill",
+      "metadata": {
+        "maputnik:comment": "hacer tipo y demas\nhttps://www.openstreetmap.org/way/563566793"
+      },
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 11,
+      "filter": ["all", ["==", "leisure", "garden"]],
+      "paint": {"fill-color": "#cdebb0"}
+    },
+    {
+      "id": "leisure_water_park",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 11,
+      "filter": ["all", ["==", "leisure", "water_park"]],
+      "paint": {
+        "fill-color": "#cbfacf",
+        "fill-outline-color": {"stops": [[11, "#cbfacf"], [19, "#78f283"]]}
+      }
+    },
+    {
+      "id": "leisure_fitness_station",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 11,
+      "filter": ["all", ["==", "leisure", "fitness_station"]],
+      "paint": {"fill-color": "#cbfacf", "fill-outline-color": "#a0dba5"}
+    },
+    {
+      "id": "leisure_pitch",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 11,
+      "filter": ["all", ["==", "leisure", "pitch"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#aae0cb",
+        "fill-outline-color": {"stops": [[13, "#aae0cb"], [17, "#6dd1aa"]]}
+      }
+    },
+    {
+      "id": "leisure_track",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 11,
+      "filter": ["all", ["==", "leisure", "track"]],
+      "paint": {
+        "fill-color": "#aae0cb",
+        "fill-outline-color": {"stops": [[11, "#aae0cb"], [15, "#adddca"]]}
+      }
+    },
+    {
+      "id": "leisure_swimming_pool",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 11,
+      "filter": ["all", ["==", "leisure", "swimming_pool"]],
+      "paint": {"fill-color": "#aad3df", "fill-outline-color": "#7dc8dc"}
+    },
+    {
+      "id": "leisure_stadium",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 11,
+      "filter": ["all", ["==", "leisure", "stadium"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#cbfacf",
+        "fill-outline-color": {"stops": [[11, "#cbfacf"], [19, "#78f283"]]}
+      }
+    },
+    {
+      "id": "leisure_sports_centre",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 11,
+      "filter": ["all", ["==", "leisure", "sports_centre"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#cbfacf",
+        "fill-outline-color": {"stops": [[11, "#cbfacf"], [19, "#78f283"]]}
+      }
+    },
+    {
+      "id": "leisure_miniature_golf",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 11,
+      "filter": ["all", ["==", "leisure", "miniature_golf"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#def6c0"}
+    },
+    {
+      "id": "leisure_golf_course",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 11,
+      "filter": ["all", ["==", "leisure", "golf_course"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#def6c0"}
+    },
+    {
+      "id": "leisure_dog_park",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 11,
+      "filter": ["all", ["==", "leisure", "dog_park"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#cbfacf"}
+    },
+    {
+      "id": "leisure_park",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 11,
+      "filter": ["all", ["==", "leisure", "park"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#c8facc"}
+    },
+    {
+      "id": "leisure_playground",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 11,
+      "filter": ["all", ["==", "leisure", "park"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#cbfacf", "fill-outline-color": "#a0dba5"}
+    },
+    {
+      "id": "tourism_picnic",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "tourism",
+      "minzoom": 13,
+      "filter": ["all", ["==", "tourism", "picnic_site"]],
+      "paint": {"fill-color": "#def6c0", "fill-outline-color": "#60a00f"}
+    },
+    {
+      "id": "tourism_camp",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "tourism",
+      "minzoom": 13,
+      "filter": ["all", ["==", "tourism", "camp_site"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#def6c0", "fill-outline-color": "#60a00f"}
+    },
+    {
+      "id": "tourism_caravan",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "tourism",
+      "minzoom": 13,
+      "filter": ["all", ["==", "tourism", "caravan_site"]],
+      "paint": {"fill-color": "#def6c0", "fill-outline-color": "#60a00f"}
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "ocean_polygons",
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#7FBAFA"}
+    },
+    {
+      "id": "aeroway_hangar",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "aeroway",
+      "minzoom": 12,
+      "filter": ["all", ["==", "aeroway", "hangar"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#e5cf8d"}
+    },
+    {
+      "id": "aeroway_runway",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "aeroway",
+      "minzoom": 12,
+      "filter": ["all", ["==", "aeroway", "runway"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#bbbbcc"}
+    },
+    {
+      "id": "aeroway_apron",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "aeroway",
+      "minzoom": 11,
+      "filter": ["all", ["==", "aeroway", "apron"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#dbdbe1"}
+    },
+    {
+      "id": "aeroway_taxiway",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "aeroway",
+      "filter": ["all", ["==", "aeroway", "taxiway"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#bbbbcc",
+        "line-width": {"stops": [[14, 4], [17, 18]]}
+      }
+    },
+    {
+      "id": "natural_ tree",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 17,
+      "filter": ["all", ["==", "natural", "tree"]],
+      "layout": {
+        "text-font": ["Noto Sans Regular"],
+        "text-field": "",
+        "text-justify": "center",
+        "text-anchor": "top",
+        "text-padding": 2,
+        "icon-size": {"stops": [[16, 0.5], [17, 0.8]]},
+        "icon-rotation-alignment": "map",
+        "icon-allow-overlap": true,
+        "icon-image": "tree",
+        "icon-padding": 2,
+        "icon-pitch-alignment": "map"
+      },
+      "paint": {
+        "text-translate": [0, 8],
+        "text-opacity": {"stops": [[12, 0], [13, 1]]}
+      }
+    },
+    {
+      "id": "natural_wetland",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 11,
+      "filter": ["all", ["has", "wetland"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": [
+          "case",
+          [
+            "in",
+            ["get", "wetland"],
+            ["literal", ["marsh", "saltmarsh", "wet_meadow"]]
+          ],
+          "#cfeca8",
+          ["==", ["get", "wetland"], "swamp"],
+          "#aed1a0",
+          ["==", ["get", "wetland"], "tidalflat"],
+          "#deeded",
+          "#FFF"
+        ],
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "natural_water",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "filter": ["all", ["==", "natural", "water"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#7FBAFA"}
+    },
+    {
+      "id": "natural_wetland-pattern",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 11,
+      "filter": ["all", ["==", "natural", "wetland"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#b4c8cb",
+        "fill-pattern": [
+          "case",
+          [
+            "in",
+            ["get", "wetland"],
+            ["literal", ["marsh", "saltmarsh", "wet_meadow"]]
+          ],
+          "marsh",
+          ["==", ["get", "wetland"], "swamp"],
+          "swamp",
+          ["==", ["get", "wetland"], "tidalflat"],
+          "wetland",
+          "wetland"
+        ],
+        "fill-opacity": 0.4
+      }
+    },
+    {
+      "id": "building",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "buildings",
+      "minzoom": 13,
+      "filter": ["all", ["has", "building"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#d9d0c9", "fill-outline-color": "#c2b5aa"}
+    },
+    {
+      "id": "ww_dam",
+      "type": "fill",
+      "source": "euskadi",
+      "source-layer": "waterway",
+      "minzoom": 13,
+      "filter": ["all", ["==", "kind", "dam"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#adadad", "fill-outline-color": "#4F4F4F"}
+    },
+    {
+      "id": "ww_stream-int-tun-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "waterway",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "waterway", "stream"],
+        ["==", "tunnel", true],
+        ["==", "intermittent", true]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(207, 214, 214, 1)",
+        "line-width": {"stops": [[15, 3], [18, 5]]}
+      }
+    },
+    {
+      "id": "ww_stream-int",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "waterway",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "waterway", "stream"],
+        ["==", "intermittent", true]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#7FBAFA",
+        "line-width": {"stops": [[13, 0.5], [15, 2]]},
+        "line-dasharray": [4, 4]
+      }
+    },
+    {
+      "id": "ww_stream",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "waterway",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "waterway", "stream"],
+        ["!=", "intermittent", true]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#7FBAFA",
+        "line-width": {"stops": [[13, 1], [15, 4], [18, 6]]},
+        "line-dasharray": [1]
+      }
+    },
+    {
+      "id": "ww_ditch",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "waterway",
+      "minzoom": 10,
+      "filter": ["all", ["==", "waterway", "ditch"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#aad3df",
+        "line-width": {"stops": [[10, 1], [19, 6]]}
+      }
+    },
+    {
+      "id": "ww_drain",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "waterway",
+      "minzoom": 10,
+      "filter": ["all", ["==", "waterway", "drain"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#aad3df",
+        "line-width": {"stops": [[10, 1], [19, 6]]}
+      }
+    },
+    {
+      "id": "ww_river",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "waterway",
+      "minzoom": 5,
+      "filter": ["all", ["==", "waterway", "river"], ["!has", "tunnel"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#7FBAFA",
+        "line-width": {"stops": [[6, 0.8], [11, 2.5], [14, 7], [18, 14]]}
+      }
+    },
+    {
+      "id": "ww_river-name",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "waterway",
+      "minzoom": 13,
+      "filter": ["all", ["in", "waterway", "river", "ditch", "stream"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[10, ""], [12, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "center",
+        "text-offset": [0, 0],
+        "text-size": {"stops": [[13, 10], [18, 14]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": false,
+        "symbol-placement": "line"
+      },
+      "paint": {
+        "icon-color": "#628fbc",
+        "text-color": "rgba(38, 52, 65, 1)",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "ww_waterfall",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "waterway",
+      "minzoom": 13,
+      "filter": ["all", ["==", "waterway", "waterfall"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": true,
+        "text-allow-overlap": false,
+        "text-optional": true,
+        "icon-image": "waterfall",
+        "icon-size": {"stops": [[13, 1], [15, 1.5], [17, 2]]}
+      },
+      "paint": {"icon-color": "#628fbc", "text-color": "#628fbc"}
+    },
+    {
+      "id": "hi_mw_link-cas-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", true],
+        ["!has", "bridge"],
+        ["has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#e22e26",
+        "line-width": {"stops": [[7, 1], [15, 8], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_mw_link-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", true],
+        ["has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#8187CB",
+        "line-width": {"stops": [[7, 0.5], [15, 2.5], [18, 4]]}
+      }
+    },
+    {
+      "id": "hi_ter-cas-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "tertiary"],
+        ["!has", "bridge"],
+        ["has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#ABAB0A",
+        "line-width": {"stops": [[12, 3], [18, 20]]}
+      }
+    },
+    {
+      "id": "hi_ter-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": ["all", ["==", "highway", "tertiary"], ["has", "tunnel"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(243, 230, 136, 1)",
+        "line-width": {"stops": [[12, 2.4], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_sec-cas-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "secondary"],
+        ["!has", "bridge"],
+        ["has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#0A670A",
+        "line-width": {"stops": [[11, 2], [12, 4], [18, 20]]}
+      }
+    },
+    {
+      "id": "hi_sec-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": ["all", ["==", "highway", "secondary"], ["has", "tunnel"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#4F9D4F",
+        "line-width": {"stops": [[10, 0.6], [12, 3], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_prim-cas-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "highway", "primary"],
+        ["!has", "bridge"],
+        ["has", "tunnel"],
+        ["has", "ref"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#a63603",
+        "line-width": {"stops": [[8, 1.4], [12, 4], [18, 20]]}
+      }
+    },
+    {
+      "id": "hi_prim-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "highway", "primary"],
+        ["has", "tunnel"],
+        ["has", "ref"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(243, 188, 125, 1)",
+        "line-width": {"stops": [[8, 1], [12, 3.4], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_trunk-cas-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 6,
+      "filter": [
+        "all",
+        ["==", "highway", "trunk"],
+        ["!has", "bridge"],
+        ["has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#670707",
+        "line-width": {"stops": [[8, 1.6], [12, 4], [18, 20]]}
+      }
+    },
+    {
+      "id": "hi_trunk-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 6,
+      "filter": ["all", ["==", "highway", "trunk"], ["has", "tunnel"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": {
+          "stops": [[6, "#E9A3A3"], [10, "rgba(245, 137, 138, 1)"]]
+        },
+        "line-width": {"stops": [[8, 1.6], [12, 3.4], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_mw-cas-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", false],
+        ["==", "tunnel", true]
+      ],
+      "layout": {"line-join": "round", "visibility": "visible"},
+      "paint": {
+        "line-width": {"stops": [[7, 1.1], [18, 20]]},
+        "line-color": "rgba(222, 137, 133, 1)"
+      }
+    },
+    {
+      "id": "hi_mw-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", false],
+        ["==", "tunnel", true]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#8187CB",
+        "line-width": {"stops": [[7, 0.5], [18, 6]]}
+      }
+    },
+    {
+      "id": "hi_mw-toll-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", false],
+        ["==", "toll", "yes"],
+        ["==", "tunnel", true]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#fef700",
+        "line-width": {"stops": [[7, 0.5], [18, 6]]}
+      }
+    },
+    {
+      "id": "hi_primLink-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "primary"],
+        ["!has", "bridge"],
+        ["!has", "tunnel"],
+        ["==", "link", true]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-join": "miter",
+        "line-cap": "butt"
+      },
+      "paint": {
+        "line-color": "#a63603",
+        "line-width": {"stops": [[12, 3], [18, 18]]}
+      }
+    },
+    {
+      "id": "hi_primLink",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "primary"],
+        ["!has", "bridge"],
+        ["!has", "tunnel"],
+        ["==", "link", true]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "#f0881e",
+        "line-width": {"stops": [[12, 2.4], [18, 14]]}
+      }
+    },
+    {
+      "id": "hi_trunkLink-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "trunk"],
+        ["!has", "bridge"],
+        ["!has", "tunnel"],
+        ["==", "link", true]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "#670707",
+        "line-width": {"stops": [[12, 3.2], [18, 18]]}
+      }
+    },
+    {
+      "id": "hi_trunkLink",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "trunk"],
+        ["!has", "bridge"],
+        ["!has", "tunnel"],
+        ["==", "link", true]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": {"stops": [[6, "#E9A3A3"], [10, "#F72224"]]},
+        "line-width": {"stops": [[8, 1.2], [12, 3], [18, 14]]}
+      }
+    },
+    {
+      "id": "hi_mw_link-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", true],
+        ["!has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-join": "miter",
+        "line-cap": "butt"
+      },
+      "paint": {
+        "line-color": "#e22e26",
+        "line-width": {"stops": [[7, 1], [15, 8], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_mw_link",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", true],
+        ["!has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible", "line-cap": "butt"},
+      "paint": {
+        "line-color": "#8187CB",
+        "line-width": {"stops": [[7, 0.5], [15, 2.5], [18, 4]]}
+      }
+    },
+    {
+      "id": "hi_track-sele-case",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "https://wiki.openstreetmap.org/wiki/Key:tracktype"
+      },
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 13,
+      "filter": ["any", ["==", "highway", "track"]],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "line-color": [
+          "case",
+          ["==", ["get", "tracktype"], "grade2"],
+          "#090",
+          "#FFF"
+        ],
+        "line-width": {"stops": [[14, 1], [18, 6]]}
+      }
+    },
+    {
+      "id": "hi_track-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 13,
+      "filter": ["all", ["in", "highway", "track"]],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "line-color": "#A79E8F",
+        "line-width": {"stops": [[14, 1.4], [18, 10]]}
+      }
+    },
+    {
+      "id": "hi_track-unp",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "https://wiki.openstreetmap.org/wiki/Key:tracktype"
+      },
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "highway", "track"],
+        [
+          "any",
+          ["==", "tracktype", "grade3"],
+          ["==", "tracktype", "grade4"],
+          ["==", "tracktype", "grade5"],
+          ["!has", "tracktype"]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#5D440F",
+        "line-width": {"stops": [[14, 1], [18, 6]]},
+        "line-dasharray": [4, 4]
+      }
+    },
+    {
+      "id": "hi_track-pav",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "https://wiki.openstreetmap.org/wiki/Key:tracktype"
+      },
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "highway", "track"],
+        ["any", ["==", "tracktype", "grade1"], ["==", "tracktype", "grade2"]]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#5D440F",
+        "line-width": {"stops": [[14, 1], [18, 6]]}
+      }
+    },
+    {
+      "id": "hi_liv-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 11,
+      "filter": ["all", ["in", "highway", "living_street", "pedestrian"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#676763",
+        "line-width": {"stops": [[13, 1.2], [15, 4], [17, 14]]}
+      }
+    },
+    {
+      "id": "hi_liv",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 11,
+      "filter": ["all", ["in", "highway", "living_street", "pedestrian"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#D2E9E9",
+        "line-width": {"stops": [[13, 0.8], [15, 3], [17, 12]]}
+      }
+    },
+    {
+      "id": "hi_serv-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 14,
+      "filter": ["all", ["in", "highway", "service", "unclassified"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#676763",
+        "line-width": {"stops": [[13, 1.6], [18, 10]]}
+      }
+    },
+    {
+      "id": "hi_serv",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 14,
+      "filter": ["any", ["in", "highway", "service", "unclassified"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#E6E6E6",
+        "line-width": {"stops": [[13, 1.4], [18, 8]]}
+      }
+    },
+    {
+      "id": "hi_resi-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 11,
+      "filter": ["all", ["==", "highway", "residential"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(74, 73, 73, 1)",
+        "line-width": {"stops": [[13, 1.2], [15, 4], [17, 14]]}
+      }
+    },
+    {
+      "id": "hi_resi",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 11,
+      "filter": ["all", ["==", "highway", "residential"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#ffffff",
+        "line-width": {"stops": [[13, 0.8], [15, 3], [17, 12]]}
+      }
+    },
+    {
+      "id": "hi_resi-way-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["in", "highway", "trunk", "primary", "secondary", "tertiary"],
+        ["!has", "ref"]
+      ],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "line-color": "rgba(74, 73, 73, 1)",
+        "line-width": {"stops": [[13, 1.2], [15, 4], [17, 14]]}
+      }
+    },
+    {
+      "id": "hi_resi-way",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["in", "highway", "trunk", "primary", "secondary", "tertiary"],
+        ["!has", "ref"]
+      ],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "line-color": "#ffffff",
+        "line-width": {"stops": [[13, 0.8], [15, 3], [17, 12]]}
+      }
+    },
+    {
+      "id": "hi_ter-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 9,
+      "filter": [
+        "all",
+        ["==", "highway", "tertiary"],
+        ["!has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#ABAB0A",
+        "line-width": {"stops": [[11, 2], [12, 3], [18, 20]]}
+      }
+    },
+    {
+      "id": "hi_ter",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 9,
+      "filter": [
+        "all",
+        ["==", "highway", "tertiary"],
+        ["!has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#ffe003",
+        "line-width": {"stops": [[10, 0.6], [12, 3], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_sec-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 8,
+      "filter": [
+        "all",
+        ["==", "highway", "secondary"],
+        ["!has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#0A670A",
+        "line-width": {"stops": [[11, 2], [12, 4], [18, 20]]}
+      }
+    },
+    {
+      "id": "hi_sec",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 8,
+      "filter": [
+        "all",
+        ["==", "highway", "secondary"],
+        ["!has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#090",
+        "line-width": {"stops": [[10, 0.6], [12, 3], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_prim-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "highway", "primary"],
+        ["!has", "bridge"],
+        ["!has", "tunnel"],
+        ["==", "link", false]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-join": "miter",
+        "line-cap": "butt"
+      },
+      "paint": {
+        "line-color": "#a63603",
+        "line-width": {"stops": [[8, 1.4], [12, 4], [18, 20]]}
+      }
+    },
+    {
+      "id": "hi_prim",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "highway", "primary"],
+        ["!has", "bridge"],
+        ["!has", "tunnel"],
+        ["==", "link", false]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "#f0881e",
+        "line-width": {"stops": [[8, 1], [12, 3.4], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_trunk-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "highway", "trunk"],
+        ["!has", "bridge"],
+        ["!has", "tunnel"],
+        ["==", "link", false]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#670707",
+        "line-width": {"stops": [[8, 1.6], [12, 4], [18, 20]]}
+      }
+    },
+    {
+      "id": "hi_trunk",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "highway", "trunk"],
+        ["!has", "bridge"],
+        ["!has", "tunnel"],
+        ["==", "link", false]
+      ],
+      "layout": {"visibility": "visible", "line-cap": "round"},
+      "paint": {
+        "line-color": {"stops": [[6, "#E9A3A3"], [10, "#F72224"]]},
+        "line-width": {"stops": [[8, 1.6], [12, 3.4], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_mw-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", false],
+        ["!has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {
+        "line-join": "round",
+        "visibility": "visible",
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#e22e26",
+        "line-width": {"stops": [[5, 1.5], [7, 2], [18, 20]]}
+      }
+    },
+    {
+      "id": "hi_mw",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", false],
+        ["!=", "toll", "yes"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#8187CB",
+        "line-width": {"stops": [[7, 0.5], [18, 6]]}
+      }
+    },
+    {
+      "id": "hi_mw-toll",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", false],
+        ["==", "toll", "yes"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#fef700",
+        "line-width": {"stops": [[7, 0.5], [18, 6]]}
+      }
+    },
+    {
+      "id": "hi_path-alpine",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "https://wiki.openstreetmap.org/wiki/ES:Key:sac_scale"
+      },
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "highway", "path"],
+        ["!=", "bicycle", "designated"],
+        [
+          "any",
+          ["==", "sac_scale", "demanding_alpine_hiking"],
+          ["==", "sac_scale", "difficult_alpine_hiking "]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#E10202",
+        "line-width": {"stops": [[14, 0.5], [18, 3]]},
+        "line-dasharray": [2, 6]
+      }
+    },
+    {
+      "id": "hi_path-mountain",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "https://wiki.openstreetmap.org/wiki/ES:Key:sac_scale"
+      },
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "highway", "path"],
+        ["!=", "bicycle", "designated"],
+        [
+          "any",
+          ["==", "sac_scale", "demanding_mountain_hiking"],
+          ["==", "sac_scale", "alpine_hiking"]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#E14242",
+        "line-width": {"stops": [[14, 0.5], [18, 3]]},
+        "line-dasharray": [2, 3]
+      }
+    },
+    {
+      "id": "hi_path-hiking",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "https://wiki.openstreetmap.org/wiki/ES:Key:sac_scale"
+      },
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "highway", "path"],
+        ["any", ["!=", "bicycle", "designated"], ["==", "foot", "designated"]],
+        [
+          "any",
+          ["==", "sac_scale", "hiking"],
+          ["==", "sac_scale", "mountain_hiking"],
+          ["!has", "sac_scale"]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#E54949",
+        "line-width": {"stops": [[14, 1.2], [18, 3]]},
+        "line-dasharray": [2, 1]
+      }
+    },
+    {
+      "id": "hi_path-footway",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "https://wiki.openstreetmap.org/wiki/ES:Key:sac_scale"
+      },
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 15,
+      "filter": ["all", ["==", "highway", "footway"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#E54949",
+        "line-width": {"stops": [[14, 0.5], [18, 1.6]]},
+        "line-dasharray": [2, 1]
+      }
+    },
+    {
+      "id": "hi_cycle",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 14,
+      "filter": ["all", ["==", "highway", "cycleway"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#343bf8",
+        "line-width": {"stops": [[14, 0.5], [18, 1.6]]},
+        "line-dasharray": [1, 2]
+      }
+    },
+    {
+      "id": "hi_steps",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 15,
+      "filter": ["all", ["==", "highway", "steps"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#fa8173",
+        "line-width": {"stops": [[15, 1.5], [17, 3], [19, 4]]},
+        "line-dasharray": {"stops": [[14, [1, 0.8]], [17, [1, 0.5]]]}
+      }
+    },
+    {
+      "id": "hi_mw_link-cas-bri",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", true],
+        ["has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-join": "miter",
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#e22e26",
+        "line-width": {"stops": [[7, 1], [15, 8], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_mw_link-bri",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", true],
+        ["has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible", "line-cap": "round"},
+      "paint": {
+        "line-color": "#8187CB",
+        "line-width": {"stops": [[7, 0.5], [15, 2.5], [18, 4]]}
+      }
+    },
+    {
+      "id": "hi_ter-cas-bri",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "highway", "tertiary"],
+        ["has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#888809",
+        "line-width": {"stops": [[12, 3], [18, 22]]},
+        "line-dasharray": {"stops": [[11, [0.3, 0.3]], [15, [0.8, 0.8]]]}
+      }
+    },
+    {
+      "id": "hi_ter-bri",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "highway", "tertiary"],
+        ["has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#ffe003",
+        "line-width": {"stops": [[12, 2.4], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_sec-cas-bri",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "secondary"],
+        ["has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#0A670A",
+        "line-width": {"stops": [[11, 2], [12, 4], [18, 20]]},
+        "line-dasharray": {"stops": [[11, [0.3, 0.3]], [15, [0.8, 0.8]]]}
+      }
+    },
+    {
+      "id": "hi_sec-bri",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "secondary"],
+        ["has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#090",
+        "line-width": {"stops": [[10, 0.6], [12, 3], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_prim-cas-bri",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "highway", "primary"],
+        ["has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#a63603",
+        "line-width": {"stops": [[8, 1.4], [12, 4], [18, 20]]},
+        "line-dasharray": {"stops": [[11, [0.3, 0.3]], [15, [0.8, 0.8]]]}
+      }
+    },
+    {
+      "id": "hi_prim-bri",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "highway", "primary"],
+        ["has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#f0881e",
+        "line-width": {"stops": [[8, 1], [12, 3.4], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_trunk-cas-bri",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 6,
+      "filter": [
+        "all",
+        ["==", "highway", "trunk"],
+        ["has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#670707",
+        "line-width": {"stops": [[8, 1.6], [12, 4], [18, 20]]},
+        "line-dasharray": {"stops": [[11, [0.3, 0.3]], [15, [0.8, 0.8]]]}
+      }
+    },
+    {
+      "id": "hi_trunk-bri",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 6,
+      "filter": [
+        "all",
+        ["==", "highway", "trunk"],
+        ["has", "bridge"],
+        ["!has", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": {"stops": [[6, "#E9A3A3"], [10, "#F72224"]]},
+        "line-width": {"stops": [[8, 1.6], [12, 3.4], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_mw-cas-bri-out",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", false],
+        ["==", "bridge", true]
+      ],
+      "layout": {
+        "line-join": "miter",
+        "visibility": "visible",
+        "line-cap": "butt"
+      },
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-width": {"stops": [[7, 1.2], [18, 22]]},
+        "line-dasharray": {"stops": [[11, [0.3, 0.3]], [15, [1, 1]]]}
+      }
+    },
+    {
+      "id": "hi_mw-cas-bri",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 6,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", false],
+        ["==", "bridge", true]
+      ],
+      "layout": {
+        "line-join": "miter",
+        "visibility": "visible",
+        "line-cap": "butt"
+      },
+      "paint": {
+        "line-color": "#e22e26",
+        "line-width": {"stops": [[7, 0.8], [18, 16]]}
+      }
+    },
+    {
+      "id": "hi_mw-bri",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", false],
+        ["!=", "toll", "yes"],
+        ["has", "bridge"]
+      ],
+      "layout": {"visibility": "visible", "line-cap": "butt"},
+      "paint": {
+        "line-color": "#8187CB",
+        "line-width": {"stops": [[7, 0.5], [18, 6]]}
+      }
+    },
+    {
+      "id": "hi_mw-toll-bri",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "link", false],
+        ["==", "toll", "yes"],
+        ["has", "bridge"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#fef700",
+        "line-width": {"stops": [[7, 0.5], [18, 6]]}
+      }
+    },
+    {
+      "id": "rw_tram-cas-tun",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", ["get", "tunnel"], true],
+        [
+          "any",
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "tram"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "funicular"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "light_rail"],
+            false
+          ]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": [
+          "interpolate",
+          ["exponential", 4],
+          ["zoom"],
+          6,
+          0.4,
+          15,
+          4,
+          19,
+          8
+        ],
+        "line-color": "#000000"
+      }
+    },
+    {
+      "id": "rw_tram-cas-tun2",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", ["get", "tunnel"], true],
+        [
+          "any",
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "tram"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "funicular"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "light_rail"],
+            false
+          ]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": [
+          "interpolate",
+          ["exponential", 4],
+          ["zoom"],
+          6,
+          0.4,
+          15,
+          2,
+          19,
+          4
+        ],
+        "line-color": "#AFAFAF"
+      }
+    },
+    {
+      "id": "rw_tram-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["!=", ["get", "tunnel"], true],
+        [
+          "any",
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "tram"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "funicular"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "light_rail"],
+            false
+          ]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": [
+          "interpolate",
+          ["exponential", 4],
+          ["zoom"],
+          6,
+          0.4,
+          15,
+          4,
+          19,
+          8
+        ],
+        "line-color": "#000000"
+      }
+    },
+    {
+      "id": "rw_tram-cas2",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["!=", ["get", "tunnel"], true],
+        [
+          "any",
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "tram"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "funicular"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "light_rail"],
+            false
+          ]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": [
+          "interpolate",
+          ["exponential", 4],
+          ["zoom"],
+          6,
+          0.4,
+          15,
+          2,
+          19,
+          4
+        ],
+        "line-color": "#E7E7E7"
+      }
+    },
+    {
+      "id": "rw_tram",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        [
+          "any",
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "tram"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "funicular"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "light_rail"],
+            false
+          ]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": [
+          "interpolate",
+          ["exponential", 4],
+          ["zoom"],
+          6,
+          0.3,
+          15,
+          6,
+          19,
+          12
+        ],
+        "line-dasharray": [0.2, 0.8],
+        "line-color": "#000000"
+      }
+    },
+    {
+      "id": "rw_rail-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["!=", ["get", "tunnel"], true],
+        [
+          "any",
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "rail"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "narrow_gauge"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "subway"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "disused"],
+            false
+          ]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": [
+          "interpolate",
+          ["exponential", 4],
+          ["zoom"],
+          6,
+          0.5,
+          15,
+          4,
+          19,
+          8
+        ],
+        "line-color": "#000000"
+      }
+    },
+    {
+      "id": "rw_rail-cas2",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["!=", ["get", "tunnel"], true],
+        [
+          "any",
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "rail"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "narrow_gauge"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "subway"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "disused"],
+            false
+          ]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": [
+          "interpolate",
+          ["exponential", 4],
+          ["zoom"],
+          6,
+          0.5,
+          15,
+          2,
+          19,
+          4
+        ],
+        "line-color": "#E6E6E6"
+      }
+    },
+    {
+      "id": "rw_rail-tun-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", ["get", "tunnel"], true],
+        [
+          "any",
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "rail"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "narrow_gauge"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "subway"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "disused"],
+            false
+          ]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": [
+          "interpolate",
+          ["exponential", 4],
+          ["zoom"],
+          6,
+          0.5,
+          15,
+          4,
+          19,
+          8
+        ],
+        "line-color": "#464646"
+      }
+    },
+    {
+      "id": "rw_rail-tun-cas2",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", ["get", "tunnel"], true],
+        [
+          "any",
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "rail"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "narrow_gauge"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "subway"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "disused"],
+            false
+          ]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": [
+          "interpolate",
+          ["exponential", 4],
+          ["zoom"],
+          6,
+          0.5,
+          15,
+          2,
+          19,
+          4
+        ],
+        "line-color": "#A8A8A8"
+      }
+    },
+    {
+      "id": "rw_rail",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["!=", ["get", "tunnel"], "yes"],
+        [
+          "any",
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "rail"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "narrow_gauge"],
+            false
+          ],
+          [
+            "case",
+            ["==", ["typeof", ["get", "railway"]], "string"],
+            ["==", ["get", "railway"], "subway"],
+            false
+          ]
+        ]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": [
+          "interpolate",
+          ["exponential", 4],
+          ["zoom"],
+          6,
+          0.5,
+          15,
+          6,
+          19,
+          12
+        ],
+        "line-dasharray": [0.2, 0.8],
+        "line-color": "#000000"
+      }
+    },
+    {
+      "id": "rw_cross",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        ["in", "railway", "level_crossing", "railway_crossing"]
+      ],
+      "layout": {
+        "icon-image": "level_crossing2",
+        "icon-size": {"stops": [[15, 1], [17, 2]]},
+        "icon-allow-overlap": false
+      }
+    },
+    {
+      "id": "rw_entrance",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 15,
+      "filter": ["all", ["in", "railway", "subway_entrance"]],
+      "layout": {
+        "icon-image": "entrance",
+        "icon-size": {"stops": [[15, 0.5], [17, 1.5]]},
+        "icon-allow-overlap": true
+      }
+    },
+    {
+      "id": "rw_stop",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 13,
+      "filter": ["all", ["in", "railway", "station", "halt", "tram_stop"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[6, ""], [16, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[15, 10], [17, 12]]},
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1,
+        "visibility": "visible",
+        "icon-image": "stop",
+        "icon-size": {"stops": [[13, 0.6], [16, 1]]}
+      },
+      "paint": {
+        "icon-color": "#bf0000",
+        "text-color": "#bf0000",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "rw_construction",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "railway",
+      "minzoom": 14,
+      "filter": ["all", ["in", "railway", "proposed", "construction"]],
+      "paint": {
+        "line-color": "#210101",
+        "line-dasharray": [1, 2, 1],
+        "line-width": {"stops": [[14, 0.7], [16, 2]]}
+      }
+    },
+    {
+      "id": "power_minor-line",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "power",
+      "minzoom": 15,
+      "filter": ["all", ["in", "power", "minor_line"]],
+      "paint": {"line-color": "rgba(177, 177, 177, 1)", "line-width": 1}
+    },
+    {
+      "id": "power_line",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "power",
+      "minzoom": 15,
+      "filter": ["all", ["in", "power", "line", "cable"]],
+      "paint": {"line-color": "rgba(136, 136, 136, 1)"}
+    },
+    {
+      "id": "power_tower",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "power",
+      "minzoom": 15,
+      "filter": ["all", ["in", "power", "tower", "pole"]],
+      "layout": {
+        "icon-image": "power_tower2",
+        "icon-size": {"stops": [[13, 0.8], [16, 1]]}
+      }
+    },
+    {
+      "id": "power_gen-wind",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "power",
+      "minzoom": 14,
+      "filter": ["all", ["==", "generator:source", "wind"]],
+      "layout": {"visibility": "visible", "icon-image": "generator_wind"}
+    },
+    {
+      "id": "power_gen",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "power",
+      "minzoom": 17,
+      "filter": ["all", ["==", "power", "generator"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          [
+            "all",
+            [
+              "in",
+              ["get", "generator:source"],
+              [
+                "literal",
+                [
+                  "coal",
+                  "gas",
+                  "biomass",
+                  "biofuel",
+                  "biogas",
+                  "oil",
+                  "diesel",
+                  "gasoline",
+                  "waste"
+                ]
+              ]
+            ]
+          ],
+          "generator_comb",
+          ["all", ["==", ["get", "generator:source"], "nuclear"]],
+          "generator_nuclear",
+          ["all", ["==", ["get", "generator:source"], "solar"]],
+          "generator_solar",
+          [
+            "all",
+            [
+              "in",
+              ["get", "generator:source"],
+              ["literal", ["hydro", "tidal", "wave", "geothermal"]]
+            ]
+          ],
+          "generator_water",
+          "0"
+        ],
+        "icon-allow-overlap": false,
+        "icon-offset": [0, 20],
+        "text-font": ["Noto Sans Italic"],
+        "text-field": "{name}",
+        "text-size": 12,
+        "text-offset": [0, 4]
+      }
+    },
+    {
+      "id": "power_name",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "power",
+      "minzoom": 16,
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Italic"],
+        "text-size": 12,
+        "visibility": "none"
+      },
+      "paint": {
+        "text-color": "#6B6B6B",
+        "text-halo-width": 2,
+        "text-halo-color": "#DCDCDC"
+      }
+    },
+    {
+      "id": "manmade_pipeline",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "man_madeL",
+      "minzoom": 15,
+      "filter": ["all", ["==", "man_made", "pipeline"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": [
+          "case",
+          [
+            "all",
+            ["in", ["get", "substance"], ["literal", ["gas", "LNG", "lng"]]],
+            ["!=", ["get", "location"], "overground"]
+          ],
+          "#BB0",
+          [
+            "all",
+            ["in", ["get", "substance"], ["literal", ["gas", "LNG"]]],
+            ["==", ["get", "location"], "overground"]
+          ],
+          "#CC0",
+          [
+            "all",
+            ["in", ["get", "substance"], ["literal", ["water", "rainwater"]]],
+            ["!=", ["get", "location"], "overground"]
+          ],
+          "#007878",
+          [
+            "all",
+            ["in", ["get", "substance"], ["literal", ["water", "rainwater"]]],
+            ["==", ["get", "location"], "overground"]
+          ],
+          "#00BABA",
+          "rgba(0,0,0,0)"
+        ],
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "manmade_storage",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "man_made",
+      "minzoom": 17,
+      "filter": ["all", ["==", "man_made", "storage_tank"]],
+      "layout": {"icon-image": "storage_tank"}
+    },
+    {
+      "id": "manmade_chimney",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "man_made",
+      "minzoom": 17,
+      "filter": ["all", ["==", "man_made", "chimney"]],
+      "layout": {"icon-image": "chimney", "visibility": "visible"}
+    },
+    {
+      "id": "manmade_crane",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "man_made",
+      "minzoom": 17,
+      "filter": ["all", ["==", "man_made", "crane"]],
+      "layout": {"icon-image": "crane"}
+    },
+    {
+      "id": "manmade_lighthouse",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "man_made",
+      "minzoom": 15,
+      "filter": ["all", ["==", "man_made", "lighthouse"]],
+      "layout": {"icon-image": "lighthouse"}
+    },
+    {
+      "id": "manmade_mast",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "man_made",
+      "minzoom": 15,
+      "filter": ["all", ["==", "man_made", "mast"]],
+      "layout": {"icon-image": "mast", "icon-rotation-alignment": "map"}
+    },
+    {
+      "id": "manmade_obelisk",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "man_made",
+      "minzoom": 15,
+      "filter": ["all", ["==", "man_made", "obelisk"]],
+      "layout": {"icon-image": "obelisk"}
+    },
+    {
+      "id": "manmade_telescope",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "man_made",
+      "minzoom": 15,
+      "filter": ["all", ["==", "man_made", "telescope"]],
+      "layout": {"icon-image": "telescope_dish"}
+    },
+    {
+      "id": "manmade_surveillance",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "man_made",
+      "minzoom": 16,
+      "filter": ["all", ["==", "man_made", "surveillance"]],
+      "layout": {
+        "icon-image": "camera",
+        "icon-size": 0.5,
+        "icon-rotation-alignment": "map"
+      }
+    },
+    {
+      "id": "manmade_aerialway",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "man_made",
+      "minzoom": 0,
+      "filter": ["all", ["has", "aerialway"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": {"stops": [[14, 1], [17, 3]]},
+        "line-color": "#555"
+      }
+    },
+    {
+      "id": "manmade_aerialway-dash",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "man_made",
+      "minzoom": 14,
+      "filter": ["all", ["has", "aerialway"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": {"stops": [[14, 4], [17, 8]]},
+        "line-dasharray": [0.2, 1],
+        "line-color": "#555"
+      }
+    },
+    {
+      "id": "manmade_bunker",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "man_made",
+      "minzoom": 16,
+      "filter": ["all", ["==", "man_made", "bunker"]],
+      "layout": {"icon-image": "bunker"}
+    },
+    {
+      "id": "manmade_tower",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "man_made",
+      "minzoom": 16,
+      "filter": ["all", ["==", "man_made", "tower"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "tower:type"], "communication"]],
+          "communications_tower",
+          ["all", ["==", ["get", "tower:type"], "lighting"]],
+          "tower_lighting",
+          ["all", ["==", ["get", "tower:type"], "observation"]],
+          "tower_observation",
+          ["all", ["==", ["get", "tower:type"], "defensive"]],
+          "tower_defensive",
+          "0"
+        ]
+      }
+    },
+    {
+      "id": "tourism_alpine",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "tourism",
+      "minzoom": 15,
+      "filter": ["all", ["in", "tourism", "alpine_hut", "wilderness_hut"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "tourism"], "alpine_hut"]],
+          "alpinehut",
+          ["all", ["==", ["get", "tourism"], "wilderness_hut"]],
+          "wilderness_hut",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[6, ""], [16, "{name}"]]},
+        "text-size": {"stops": [[14, 10], [18, 14]]},
+        "text-pitch-alignment": "map",
+        "text-offset": [0, 1],
+        "text-anchor": "top",
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#0092da",
+        "text-color": "#0092da",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "tourism_apartment",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "tourism",
+      "minzoom": 16,
+      "filter": [
+        "all",
+        [
+          "in",
+          "tourism",
+          "apartment",
+          "chalet",
+          "guest_house",
+          "hostel",
+          "hotel",
+          "motel"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "tourism"], "apartment"]],
+          "apartment",
+          ["all", ["==", ["get", "tourism"], "chalet"]],
+          "chalet",
+          ["all", ["==", ["get", "tourism"], "guest_house"]],
+          "guest_house",
+          ["all", ["==", ["get", "tourism"], "hostel"]],
+          "hostel",
+          ["all", ["==", ["get", "tourism"], "hotel"]],
+          "hotel",
+          ["all", ["==", ["get", "tourism"], "motel"]],
+          "motel",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[6, ""], [18, "{name}"]]},
+        "text-size": {"stops": [[17, 0], [18, 12]]},
+        "text-pitch-alignment": "map",
+        "text-offset": [0, 1],
+        "text-anchor": "top",
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#0092da",
+        "text-color": "#0092da",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "tourism_art",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "tourism",
+      "minzoom": 16,
+      "filter": ["all", ["in", "tourism", "artwork", "gallery", "museum"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "tourism"], "artwork"]],
+          "artwork",
+          ["all", ["==", ["get", "tourism"], "gallery"]],
+          "art",
+          ["all", ["==", ["get", "tourism"], "museum"]],
+          "museum",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-size": {"stops": [[17, 0], [18, 12]]},
+        "text-pitch-alignment": "map",
+        "text-offset": [0, 1],
+        "text-anchor": "top",
+        "text-optional": true,
+        "text-allow-overlap": true
+      },
+      "paint": {
+        "icon-color": "#734a08",
+        "text-color": "#734a08",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "tourism_campS",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "tourism",
+      "minzoom": 13,
+      "filter": ["all", ["in", "tourism", "camp_site", "caravan_site"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "tourism"], "caravan_site"]],
+          "caravan_park",
+          ["all", ["==", ["get", "tourism"], "camp_site"]],
+          "camping",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[6, ""], [16, "{name}"]]},
+        "text-size": {"stops": [[14, 10], [18, 14]]},
+        "text-pitch-alignment": "map",
+        "text-offset": [0, 1],
+        "text-anchor": "top",
+        "text-optional": true,
+        "icon-size": {"stops": [[13, 1.3], [15, 1.5]]},
+        "icon-allow-overlap": true
+      },
+      "paint": {
+        "icon-color": "#0092da",
+        "text-color": "#0092da",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "tourism_inf",
+      "type": "symbol",
+      "metadata": {"maputnik:comment": "separar board"},
+      "source": "euskadi",
+      "source-layer": "tourism",
+      "minzoom": 16,
+      "filter": ["all", ["==", "tourism", "information"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["in", ["get", "information"], ["literal", ["map", "tactile_map"]]],
+          "map",
+          [
+            "in",
+            ["get", "information"],
+            ["literal", ["guidepost", "route_marker"]]
+          ],
+          "guidepost",
+          [
+            "in",
+            ["get", "information"],
+            ["literal", ["office", "visitor_centre", "terminal", "audioguide"]]
+          ],
+          "office",
+          ["in", ["get", "information"], ["literal", ["board", "stele"]]],
+          "board",
+          "0"
+        ],
+        "visibility": "visible",
+        "text-optional": true,
+        "icon-rotation-alignment": "viewport",
+        "icon-pitch-alignment": "auto"
+      }
+    },
+    {
+      "id": "tourism_view",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "tourism",
+      "minzoom": 16,
+      "filter": ["all", ["==", "tourism", "viewpoint"]],
+      "layout": {
+        "icon-image": "viewpoint",
+        "icon-pitch-alignment": "map",
+        "text-optional": true
+      },
+      "paint": {"icon-color": "#734a08", "text-color": "#734a08"}
+    },
+    {
+      "id": "boundary_admin2",
+      "type": "line",
+      "metadata": {"maputnik:comment": "pais"},
+      "source": "euskadi",
+      "source-layer": "boundary",
+      "minzoom": 4,
+      "filter": [
+        "all",
+        ["==", "boundary", "administrative"],
+        ["==", "admin_level", 2]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#d09acc",
+        "line-width": {"stops": [[8, 2], [14, 4], [16, 8]]}
+      }
+    },
+    {
+      "id": "boundary_admin4",
+      "type": "line",
+      "metadata": {"maputnik:comment": "comunidad"},
+      "source": "euskadi",
+      "source-layer": "boundary",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "boundary", "administrative"],
+        ["==", "admin_level", 4]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#d09acc",
+        "line-width": {"stops": [[8, 2], [14, 4], [16, 8]]}
+      }
+    },
+    {
+      "id": "boundary_admin6",
+      "type": "line",
+      "metadata": {"maputnik:comment": "provincia"},
+      "source": "euskadi",
+      "source-layer": "boundary",
+      "minzoom": 8,
+      "filter": [
+        "all",
+        ["==", "boundary", "administrative"],
+        ["==", "admin_level", 6]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#d09acc",
+        "line-width": {"stops": [[8, 2], [14, 4]]},
+        "line-dasharray": [4, 1]
+      }
+    },
+    {
+      "id": "boundary_admin8",
+      "type": "line",
+      "metadata": {"maputnik:comment": "municipio"},
+      "source": "euskadi",
+      "source-layer": "boundary",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "boundary", "administrative"],
+        ["==", "admin_level", 8]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#804080",
+        "line-width": {"stops": [[11, 1], [14, 2]]},
+        "line-dasharray": [6, 1, 1, 1]
+      }
+    },
+    {
+      "id": "boundary_admin9",
+      "type": "line",
+      "metadata": {"maputnik:comment": "barrio"},
+      "source": "euskadi",
+      "source-layer": "boundary",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "boundary", "administrative"],
+        [">=", "admin_level", 10]
+      ],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "line-color": "#804080",
+        "line-width": {"stops": [[11, 1], [14, 2]]},
+        "line-dasharray": [1, 1]
+      }
+    },
+    {
+      "id": "boundary_admin-name4",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "boundary",
+      "filter": ["all", ["has", "name"], ["==", "admin_level", 4]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": {"stops": [[8, "{name}"], [12, ""]]},
+        "text-font": ["Noto Sans Regular"],
+        "visibility": "visible",
+        "symbol-avoid-edges": false,
+        "text-offset": [0, 0],
+        "text-allow-overlap": true,
+        "text-size": 16,
+        "text-ignore-placement": false,
+        "text-max-angle": 90,
+        "text-letter-spacing": 0,
+        "text-optional": false,
+        "text-variable-anchor": ["center"],
+        "text-justify": "center"
+      },
+      "paint": {"text-halo-color": "#DDD", "text-halo-width": 1}
+    },
+    {
+      "id": "boundary_admin-name6",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "boundary",
+      "filter": ["all", ["has", "name"], ["==", "admin_level", 6]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": {"stops": [[11, ""], [12, "{name}"], [13, ""]]},
+        "text-font": ["Noto Sans Regular"],
+        "visibility": "visible",
+        "symbol-avoid-edges": false,
+        "text-offset": [0, 1],
+        "text-allow-overlap": true,
+        "text-max-angle": 90,
+        "text-variable-anchor": ["center"]
+      },
+      "paint": {"text-halo-color": "#DDD", "text-halo-width": 2}
+    },
+    {
+      "id": "boundary_admin-name8",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "boundary",
+      "filter": ["all", ["has", "name"], ["==", "admin_level", 8]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": {"stops": [[12, ""], [13, "{name}"]]},
+        "text-font": ["Noto Sans Regular"],
+        "visibility": "visible",
+        "symbol-avoid-edges": false,
+        "text-offset": [0, 1],
+        "text-allow-overlap": true,
+        "text-justify": "center",
+        "text-anchor": "bottom",
+        "text-size": {"stops": [[6, 16], [13, 12]]},
+        "symbol-spacing": 400
+      },
+      "paint": {"text-halo-color": "#DDD", "text-halo-width": 2}
+    },
+    {
+      "id": "boundary_protected",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "boundary",
+      "minzoom": 8,
+      "filter": [
+        "all",
+        ["==", "boundary", "protected_area"],
+        ["in", "protect_class", 1, 2, 4, 5, 6]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": {"stops": [[8, 3], [11, 6]]},
+        "line-color": "#80C080"
+      }
+    },
+    {
+      "id": "boundary_protected-cas",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "boundary",
+      "minzoom": 8,
+      "filter": [
+        "all",
+        ["==", "boundary", "protected_area"],
+        ["in", "protect_class", 1, 2, 4, 5, 6]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": {"stops": [[8, 1], [11, 2]]},
+        "line-color": "#408040",
+        "line-offset": -1
+      }
+    },
+    {
+      "id": "boundary_protected-name",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "boundary",
+      "minzoom": 8,
+      "maxzoom": 12,
+      "filter": [
+        "all",
+        ["==", "boundary", "protected_area"],
+        ["has", "nameCentroid"],
+        ["in", "protect_class", 1, 2, 5, 6]
+      ],
+      "layout": {
+        "icon-allow-overlap": false,
+        "icon-size": 2,
+        "text-font": ["Noto Sans Regular"],
+        "text-field": "{nameCentroid}",
+        "text-allow-overlap": true,
+        "text-size": {"stops": [[8, 10], [10, 14], [11, 16]]},
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#408040",
+        "text-halo-width": 2,
+        "text-halo-color": "#DDD"
+      }
+    },
+    {
+      "id": "boundary_protected-name4",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "boundary",
+      "minzoom": 8,
+      "maxzoom": 13,
+      "filter": [
+        "all",
+        ["==", "boundary", "protected_area"],
+        ["has", "nameCentroid"],
+        ["in", "protect_class", 4]
+      ],
+      "layout": {
+        "icon-allow-overlap": false,
+        "icon-size": 2,
+        "text-font": ["Noto Sans Regular"],
+        "text-field": "{nameCentroid}",
+        "text-allow-overlap": {"stops": [[6, false], [12, true]]},
+        "text-size": {"stops": [[8, 10], [10, 14], [11, 16]]},
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#408040",
+        "text-halo-width": 2,
+        "text-halo-color": "#DDD"
+      }
+    },
+    {
+      "id": "hi_busstop",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 15,
+      "filter": ["all", ["in", "highway", "bus_stop"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[6, ""], [16, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[15, 10], [17, 12]]},
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1,
+        "visibility": "visible",
+        "icon-image": "bus_stop",
+        "icon-size": {"stops": [[13, 1], [16, 1]]}
+      },
+      "paint": {
+        "icon-color": "#bf0000",
+        "text-color": "#bf0000",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "hi_mw-ref-copy",
+      "type": "symbol",
+      "metadata": {
+        "maputnik:comment": "https://es.wikipedia.org/wiki/Plantilla:Identificador_carretera_espa%C3%B1ola"
+      },
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 7,
+      "filter": ["all", ["==", "highway", "bus_stop"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{ref}",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": {"stops": [[10, 8], [16, 14]]},
+        "text-offset": [0, 0],
+        "text-padding": {"stops": [[6, 40], [10, 40]]},
+        "icon-image": "motorway_2x1",
+        "icon-text-fit": "both",
+        "visibility": "visible",
+        "symbol-z-order": "auto",
+        "icon-text-fit-padding": [4, 10, 4, 10],
+        "symbol-spacing": {"stops": [[10, 400], [16, 600]]},
+        "icon-allow-overlap": true,
+        "text-allow-overlap": false
+      },
+      "paint": {"icon-color": "#039", "text-color": "#fff"}
+    },
+    {
+      "id": "hi_mw-name",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 12,
+      "filter": ["all", ["in", "highway", "motorway", "trunk"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": {"stops": [[14, 10], [18, 14]]},
+        "symbol-z-order": "auto",
+        "text-allow-overlap": false,
+        "text-ignore-placement": false,
+        "icon-allow-overlap": true,
+        "text-pitch-alignment": "viewport",
+        "icon-rotation-alignment": "viewport"
+      },
+      "paint": {
+        "text-translate-anchor": "map",
+        "icon-translate-anchor": "map",
+        "text-color": "#111",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "hi_mw-int_ref",
+      "type": "symbol",
+      "metadata": {
+        "maputnik:comment": "https://es.wikipedia.org/wiki/Plantilla:Identificador_carretera_espa%C3%B1ola"
+      },
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 7,
+      "filter": ["all", ["==", "highway", "motorway"], ["has", "int_ref"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{int_ref}",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": {"stops": [[10, 8], [16, 14]]},
+        "text-offset": [0, 0],
+        "text-padding": 40,
+        "icon-image": "motorway_1x1",
+        "icon-text-fit": "both",
+        "visibility": "none",
+        "symbol-z-order": "source",
+        "icon-text-fit-padding": [4, 10, 4, 10],
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-anchor": "center",
+        "symbol-spacing": {"stops": [[6, 250], [10, 400]]},
+        "text-allow-overlap": false,
+        "icon-allow-overlap": true
+      },
+      "paint": {"icon-color": "#0c0", "text-color": "#fff"}
+    },
+    {
+      "id": "hi_mw-ref",
+      "type": "symbol",
+      "metadata": {
+        "maputnik:comment": "https://es.wikipedia.org/wiki/Plantilla:Identificador_carretera_espa%C3%B1ola"
+      },
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 7,
+      "filter": ["all", ["==", "highway", "motorway"], ["has", "ref"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{ref}",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": {"stops": [[10, 8], [16, 14]]},
+        "text-offset": [0, 0],
+        "text-padding": {"stops": [[6, 40], [10, 40]]},
+        "icon-image": "ref_mot",
+        "icon-text-fit": "both",
+        "visibility": "visible",
+        "symbol-z-order": "auto",
+        "icon-text-fit-padding": [4, 10, 4, 10],
+        "symbol-spacing": {"stops": [[10, 400], [16, 600]]},
+        "icon-allow-overlap": true,
+        "text-allow-overlap": false
+      },
+      "paint": {"icon-color": "#039", "text-color": "#fff"}
+    },
+    {
+      "id": "hi_way-name",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["in", "highway", "primary", "secondary", "tertiary"],
+        ["has", "name"],
+        ["has", "ref"]
+      ],
+      "layout": {
+        "text-font": ["Noto Sans Italic"],
+        "text-field": "{name}",
+        "symbol-placement": "line",
+        "text-size": {"stops": [[15, 10], [16, 14]]},
+        "text-allow-overlap": false,
+        "text-pitch-alignment": "auto",
+        "text-rotation-alignment": "auto",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#000",
+        "text-halo-color": "#EEE",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "hi_prim-ref",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["in", "highway", "trunk", "primary", "secondary", "tertiary"],
+        ["has", "ref"]
+      ],
+      "layout": {
+        "text-font": ["Noto Sans Bold"],
+        "text-field": "{ref}",
+        "text-allow-overlap": true,
+        "symbol-spacing": {"stops": [[12, 400], [16, 600]]},
+        "text-size": {"stops": [[14, 8], [16, 12]]},
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "highway"], "trunk"]],
+          "ref_tru",
+          ["==", ["get", "highway"], "primary"],
+          "ref_prim",
+          "0"
+        ],
+        "icon-text-fit": "both",
+        "icon-text-fit-padding": [4, 10, 4, 10],
+        "symbol-placement": "line",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": [
+          "case",
+          ["all", ["==", ["get", "highway"], "primary"]],
+          "#000",
+          ["all", ["==", ["get", "highway"], "trunk"]],
+          "#FFF",
+          [
+            "in",
+            ["get", "highway"],
+            ["literal", ["blanco", "trunk", "secondary"]]
+          ],
+          "#000",
+          [
+            "in",
+            ["get", "highway"],
+            ["literal", ["negro", "primary", "tertiary"]]
+          ],
+          "#000",
+          "#FFF"
+        ],
+        "icon-color": "#000000"
+      }
+    },
+    {
+      "id": "hi_sec-ref",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "highway", "secondary", "tertiary"],
+        ["has", "ref"]
+      ],
+      "layout": {
+        "text-font": ["Noto Sans Bold"],
+        "text-field": "{ref}",
+        "text-allow-overlap": true,
+        "symbol-spacing": {"stops": [[12, 400], [16, 600]]},
+        "text-size": {"stops": [[14, 8], [16, 12]]},
+        "icon-image": [
+          "case",
+          ["==", ["get", "highway"], "secondary"],
+          "ref_sec",
+          ["==", ["get", "highway"], "tertiary"],
+          "ref_ter",
+          "0"
+        ],
+        "icon-text-fit": "both",
+        "icon-text-fit-padding": [4, 10, 4, 10],
+        "symbol-placement": "line",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": [
+          "case",
+          ["all", ["==", ["get", "highway"], "primary"]],
+          "#000",
+          ["all", ["==", ["get", "highway"], "trunk"]],
+          "#FFF",
+          [
+            "in",
+            ["get", "highway"],
+            ["literal", ["blanco", "trunk", "secondary"]]
+          ],
+          "#000",
+          [
+            "in",
+            ["get", "highway"],
+            ["literal", ["negro", "primary", "tertiary"]]
+          ],
+          "#000",
+          "#FFF"
+        ],
+        "icon-color": "#000000"
+      }
+    },
+    {
+      "id": "hi_wayCityName",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["in", "highway", "primary", "secondary", "tertiary"],
+        ["has", "name"],
+        ["!has", "ref"]
+      ],
+      "layout": {
+        "text-font": ["Noto Sans Italic"],
+        "text-field": "{name}",
+        "symbol-placement": "line",
+        "text-size": {"stops": [[15, 8], [16, 12]]},
+        "text-allow-overlap": true,
+        "text-pitch-alignment": "auto",
+        "text-rotation-alignment": "auto",
+        "visibility": "visible",
+        "symbol-spacing": 150
+      },
+      "paint": {
+        "text-color": "#000",
+        "text-halo-color": "#EEE",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "hi_streetName",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "highway",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        [
+          "in",
+          "highway",
+          "residential",
+          "living_street",
+          "pedestrian",
+          "service",
+          "unclassified",
+          "path",
+          "track"
+        ],
+        ["has", "name"]
+      ],
+      "layout": {
+        "text-font": ["Noto Sans Italic"],
+        "text-field": "{name}",
+        "symbol-placement": "line",
+        "text-size": {"stops": [[14, 10], [16, 14]]},
+        "text-allow-overlap": true,
+        "text-pitch-alignment": "auto",
+        "text-rotation-alignment": "auto",
+        "visibility": "visible",
+        "symbol-spacing": {"stops": [[14, 200], [17, 250]]}
+      },
+      "paint": {
+        "text-color": "#000",
+        "text-halo-color": "#EEE",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "craft",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "craft",
+      "filter": ["all", ["has", "craft"]],
+      "layout": {"icon-image": "other", "visibility": "none"}
+    },
+    {
+      "id": "building_height",
+      "type": "fill-extrusion",
+      "source": "euskadi",
+      "source-layer": "buildings",
+      "minzoom": 15,
+      "filter": ["all", ["has", "height"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-extrusion-height": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          14,
+          ["get", "height"],
+          16,
+          ["/", ["get", "height"], 1]
+        ],
+        "fill-extrusion-base": 0.1,
+        "fill-extrusion-vertical-gradient": true,
+        "fill-extrusion-color": "#d9d0c9"
+      }
+    },
+    {
+      "id": "building_address",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "address",
+      "minzoom": 17,
+      "filter": ["any", ["has", "number"], ["has", "name"]],
+      "layout": {
+        "text-font": ["Noto Sans Regular"],
+        "text-field": "{number}  {name}",
+        "text-offset": [0, 0],
+        "visibility": "visible",
+        "text-size": {"stops": [[17, 10], [19, 12]]},
+        "text-allow-overlap": false,
+        "text-pitch-alignment": "map"
+      },
+      "paint": {
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1,
+        "text-color": "#3f3f3f"
+      }
+    },
+    {
+      "id": "aw_helipad",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "aeroway",
+      "minzoom": 13,
+      "filter": ["all", ["==", "aeroway", "helipad"]],
+      "layout": {
+        "icon-image": "helipad",
+        "text-font": ["Noto Sans Regular"],
+        "icon-size": {"stops": [[13, 0.5], [18, 2]]},
+        "text-field": "{name}{ref}",
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[15, 8], [18, 16]]},
+        "icon-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-width": 1,
+        "text-halo-color": "#EEE",
+        "text-color": "#6E6E6E"
+      }
+    },
+    {
+      "id": "aw_tower",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "aeroway",
+      "filter": ["all", ["==", "aeroway", "tower"]],
+      "layout": {
+        "icon-image": "tower_cantilever_communication",
+        "text-font": ["Noto Sans Regular"],
+        "icon-size": {"stops": [[13, 0.5], [18, 2]]},
+        "text-field": "{name}{ref}",
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[15, 8], [18, 16]]},
+        "icon-allow-overlap": false,
+        "text-optional": true,
+        "icon-rotation-alignment": "map"
+      },
+      "paint": {
+        "text-halo-width": 1,
+        "text-halo-color": "#EEE",
+        "text-color": "#6E6E6E"
+      }
+    },
+    {
+      "id": "aw_aerodrome",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "aeroway",
+      "filter": ["all", ["==", "aeroway", "aerodrome"]],
+      "layout": {
+        "icon-image": "aerodrome",
+        "text-font": ["Noto Sans Regular"],
+        "icon-size": {"stops": [[12, 1], [14, 2]]},
+        "text-field": "{name}",
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[12, 8], [15, 16]]},
+        "icon-rotation-alignment": "map"
+      },
+      "paint": {
+        "text-halo-width": 1,
+        "text-halo-color": "#EEE",
+        "text-color": "#6E6E6E"
+      }
+    },
+    {
+      "id": "leisure_swimming",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 16,
+      "filter": ["all", ["in", "leisure", "swimming_area", "water_park"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "leisure"], "swimming_area"]],
+          "water_park",
+          [
+            "in",
+            ["get", "leisure"],
+            ["literal", ["swimming_area", "water_park"]]
+          ],
+          "water_park",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[16, ""], [17, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[16, 0], [17, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#0e8517",
+        "text-color": "#0e8517",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "leisure_fitness",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 17,
+      "filter": [
+        "all",
+        ["in", "leisure", "fitness_centre", "fitness_station", "sports_centre"]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          [
+            "in",
+            ["get", "leisure"],
+            ["literal", ["fitness_centre", "fitness_station", "sports_centre"]]
+          ],
+          "fitness",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[16, ""], [17, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[16, 0], [17, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#0e8517",
+        "text-color": "#0e8517",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "leisure_fishing",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 16,
+      "filter": ["all", ["in", "leisure", "fishing"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[16, ""], [17, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[16, 0], [17, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true,
+        "icon-image": "fishing"
+      },
+      "paint": {
+        "icon-color": "#0e8517",
+        "text-color": "#0e8517",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "leisure_gardenName",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 16,
+      "filter": ["all", ["in", "leisure", "garden"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": [
+          "format",
+          ["get", "name"],
+          {"font-scale": 1.1},
+          "\n",
+          {},
+          ["get", "name:es"]
+        ],
+        "text-pitch-alignment": "auto",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[16, 0], [17, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#0e8517",
+        "text-color": "#0D2D0D",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "leisure_playgroundS",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 17,
+      "filter": ["all", ["in", "leisure", "playground"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[16, ""], [17, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[16, 0], [17, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true,
+        "icon-image": "playground"
+      },
+      "paint": {
+        "icon-color": "#0e8517",
+        "text-color": "#0e8517",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "leisure_dogPark",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "leisure",
+      "minzoom": 17,
+      "filter": ["all", ["in", "leisure", "dog_park"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true,
+        "icon-image": "pet"
+      },
+      "paint": {
+        "icon-color": "#0e8517",
+        "text-color": "#0e8517",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "historic_archaelogical",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "historic",
+      "minzoom": 16,
+      "filter": ["all", ["==", "historic", "archaeological_site"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true,
+        "icon-image": "archaeological_site"
+      },
+      "paint": {
+        "icon-color": "#734a08",
+        "text-color": "#734a08",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "historic_castle",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "historic",
+      "minzoom": 16,
+      "filter": ["all", ["==", "historic", "castle"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true,
+        "icon-image": "castle"
+      },
+      "paint": {
+        "icon-color": "#734a08",
+        "text-color": "#734a08",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "historic_city_gate",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "historic",
+      "minzoom": 16,
+      "filter": ["all", ["==", "historic", "city_gate"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true,
+        "icon-image": "city_gate"
+      },
+      "paint": {
+        "icon-color": "#734a08",
+        "text-color": "#734a08",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "historic_manor",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "historic",
+      "minzoom": 16,
+      "filter": ["all", ["==", "historic", "manor"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true,
+        "icon-image": "manor"
+      },
+      "paint": {
+        "icon-color": "#734a08",
+        "text-color": "#734a08",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "historic_memorial",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "historic",
+      "minzoom": 17,
+      "filter": ["all", ["==", "historic", "memorial"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true,
+        "icon-image": "memorial"
+      },
+      "paint": {
+        "icon-color": "#734a08",
+        "text-color": "#734a08",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "historic_monument",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "historic",
+      "minzoom": 17,
+      "filter": ["all", ["==", "historic", "monument"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true,
+        "icon-image": "monument"
+      },
+      "paint": {
+        "icon-color": "#734a08",
+        "text-color": "#734a08",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "shop",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "shop",
+      "minzoom": 17,
+      "filter": ["all", ["has", "shop"]],
+      "layout": {
+        "icon-image": "other",
+        "visibility": "visible",
+        "icon-padding": 1
+      }
+    },
+    {
+      "id": "shop_mall",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "shop",
+      "minzoom": 17,
+      "filter": [
+        "all",
+        [
+          "in",
+          "shop",
+          "department_store",
+          "kiosk",
+          "newsagent",
+          "supermarket",
+          "wholesale",
+          "mall"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "shop"], "department_store"]],
+          "department_store",
+          ["in", ["get", "shop"], ["literal", ["kiosk", "newsagent"]]],
+          "newsagent",
+          ["in", ["get", "shop"], ["literal", ["mall", "supermarket"]]],
+          "supermarket",
+          ["all", ["==", ["get", "shop"], "wholesale"]],
+          "trade",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#ac39ac",
+        "text-color": "#ac39ac",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "shop_clothing",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "shop",
+      "minzoom": 17,
+      "filter": [
+        "all",
+        [
+          "in",
+          "shop",
+          "bag",
+          "clothes",
+          "fabric",
+          "jewelry",
+          "watches",
+          "shoes",
+          "shoe_repair"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "shop"], "bag"]],
+          "bag",
+          ["all", ["==", ["get", "shop"], "clothes"]],
+          "clothes",
+          ["all", ["==", ["get", "shop"], "fabric"]],
+          "fabric",
+          ["in", ["get", "shop"], ["literal", ["jewelry", "watches"]]],
+          "jewelry",
+          ["in", ["get", "shop"], ["literal", ["shoes", "shoe_repair"]]],
+          "shoes",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#ac39ac",
+        "text-color": "#ac39ac",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "shop_beauty",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "shop",
+      "minzoom": 17,
+      "filter": [
+        "all",
+        [
+          "in",
+          "shop",
+          "beauty",
+          "chemist",
+          "cosmetic",
+          "hairdresser",
+          "hearing_aids",
+          "massage",
+          "medical_supply",
+          "optician",
+          "perfumery"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "shop"], "beauty"]],
+          "beauty",
+          ["all", ["==", ["get", "shop"], "chemist"]],
+          "chemist",
+          ["all", ["==", ["get", "shop"], "hairdresser"]],
+          "hairdresser",
+          ["all", ["==", ["get", "shop"], "hearing_aids"]],
+          "hearing_aids",
+          ["all", ["==", ["get", "shop"], "massage"]],
+          "massage",
+          ["all", ["==", ["get", "shop"], "medical_supply"]],
+          "medical_supply",
+          ["all", ["==", ["get", "shop"], "optician"]],
+          "optician",
+          ["in", ["get", "shop"], ["literal", ["cosmetic", "perfumery"]]],
+          "perfumery",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#ac39ac",
+        "text-color": "#ac39ac",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "shop_materials",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "shop",
+      "minzoom": 17,
+      "filter": [
+        "all",
+        [
+          "in",
+          "shop",
+          "agrarian",
+          "country_store",
+          "groundskeeping",
+          "houseware",
+          "electrical",
+          "energy",
+          "lighting",
+          "doityourself",
+          "hardware",
+          "locksmith",
+          "florist",
+          "furniture",
+          "garden_centre",
+          "garden_furniture",
+          "trade",
+          "appliance",
+          "bathroom_furnishing"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          [
+            "in",
+            ["get", "shop"],
+            ["literal", ["agrarian", "country_store", "groundskeeping"]]
+          ],
+          "reed",
+          [
+            "in",
+            ["get", "shop"],
+            ["literal", ["electrical", "energy", "lighting"]]
+          ],
+          "electricity",
+          [
+            "in",
+            ["get", "shop"],
+            ["literal", ["doityourself", "hardware", "locksmith"]]
+          ],
+          "diy",
+          [
+            "in",
+            ["get", "shop"],
+            ["literal", ["garden_centre", "garden_furniture"]]
+          ],
+          "garden_centre",
+          ["all", ["==", ["get", "shop"], "florist"]],
+          "florist",
+          ["all", ["==", ["get", "shop"], "houseware"]],
+          "houseware",
+          [
+            "in",
+            ["get", "shop"],
+            ["literal", ["trade", "appliance", "bathroom_furnishing"]]
+          ],
+          "trade",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#ac39ac",
+        "text-color": "#ac39ac",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "shop_furniture",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "shop",
+      "minzoom": 17,
+      "filter": [
+        "all",
+        [
+          "in",
+          "shop",
+          "bed",
+          "carpet",
+          "curtain",
+          "furniture",
+          "interior_decoration"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "shop"], "interior_decoration"]],
+          "interior_decoration",
+          ["in", ["get", "shop"], ["literal", ["bed", "furniture"]]],
+          "furniture",
+          ["in", ["get", "shop"], ["literal", ["carpet", "curtain"]]],
+          "carpet",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#ac39ac",
+        "text-color": "#ac39ac",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "shop_electronic",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "shop",
+      "minzoom": 17,
+      "filter": [
+        "all",
+        [
+          "in",
+          "shop",
+          "computer",
+          "electronics",
+          "hifi",
+          "radiotechnics",
+          "mobile_phone",
+          "telecommunication"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "shop"], "computer"]],
+          "computer",
+          ["all", ["==", ["get", "shop"], "electronic"]],
+          "electronic",
+          ["in", ["get", "shop"], ["literal", ["hifi", "radiotechnics"]]],
+          "hifi",
+          [
+            "in",
+            ["get", "shop"],
+            ["literal", ["mobile_phone", "telecommunication"]]
+          ],
+          "mobile_phone",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#ac39ac",
+        "text-color": "#ac39ac",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "shop_car",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "shop",
+      "minzoom": 17,
+      "filter": [
+        "all",
+        [
+          "in",
+          "shop",
+          "car",
+          "car_parts",
+          "car_repair",
+          "motorcycle",
+          "motorcycle_repair",
+          "tyres"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "shop"], "car"]],
+          "car",
+          ["all", ["==", ["get", "shop"], "car_parts"]],
+          "car_parts",
+          ["all", ["==", ["get", "shop"], "car_repair"]],
+          "car_repair",
+          ["all", ["==", ["get", "shop"], "tyres"]],
+          "tyres",
+          [
+            "in",
+            ["get", "shop"],
+            ["literal", ["motorcycle", "motorcycle_repair"]]
+          ],
+          "motorcycle",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#ac39ac",
+        "text-color": "#ac39ac",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "shop_sport",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "shop",
+      "minzoom": 17,
+      "filter": ["all", ["in", "shop", "bicycle", "outdoor", "sports"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "shop"], "bicycle"]],
+          "bicycle",
+          ["all", ["==", ["get", "shop"], "outdoor"]],
+          "outdoor",
+          ["all", ["==", ["get", "shop"], "sports"]],
+          "sports",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#ac39ac",
+        "text-color": "#ac39ac",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "shop_gifts",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "shop",
+      "minzoom": 17,
+      "filter": [
+        "all",
+        ["in", "shop", "art", "books", "gift", "toys", "ticket", "video_games"]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "shop"], "book"]],
+          "library",
+          ["all", ["==", ["get", "shop"], "gift"]],
+          "gift",
+          ["all", ["==", ["get", "shop"], "toys"]],
+          "toys",
+          ["all", ["==", ["get", "shop"], "ticket"]],
+          "ticket",
+          ["all", ["==", ["get", "shop"], "art"]],
+          "art",
+          ["all", ["==", ["get", "shop"], "video_games"]],
+          "video_games",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#ac39ac",
+        "text-color": "#ac39ac",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "shop_other",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "shop",
+      "minzoom": 17,
+      "filter": [
+        "all",
+        [
+          "in",
+          "shop",
+          "lottery",
+          "bookmaker",
+          "dry_cleaning",
+          "laundry",
+          "pet",
+          "travel_agency"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "shop"], "pet"]],
+          "pet",
+          ["all", ["==", ["get", "shop"], "travel_agency"]],
+          "travel_agency",
+          ["in", ["get", "shop"], ["literal", ["lottery", "bookmaker"]]],
+          "bookmaker",
+          ["in", ["get", "shop"], ["literal", ["dry_cleaning", "laundry"]]],
+          "laundry",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#ac39ac",
+        "text-color": "#ac39ac",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "shop_tobacco",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "shop",
+      "minzoom": 16,
+      "filter": ["all", ["in", "shop", "tobacco"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "shop"], "tobacco"]],
+          "tobacco",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#ac39ac",
+        "text-color": "#ac39ac",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "shop_food",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "shop",
+      "minzoom": 17,
+      "filter": [
+        "all",
+        [
+          "in",
+          "shop",
+          "alcohol",
+          "butcher",
+          "coffee",
+          "bakery",
+          "chocolate",
+          "confectionery",
+          "pastry",
+          "convenience",
+          "dairy",
+          "deli",
+          "farm",
+          "greengrocer",
+          "seafood",
+          "wine"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "shop"], "alcohol"]],
+          "alcohol",
+          ["all", ["==", ["get", "shop"], "bakery"]],
+          "bakery",
+          ["all", ["==", ["get", "shop"], "butcher"]],
+          "butcher",
+          ["all", ["==", ["get", "shop"], "cofee"]],
+          "cofee",
+          ["all", ["==", ["get", "shop"], "convenience"]],
+          "convenience",
+          ["all", ["==", ["get", "shop"], "dairy"]],
+          "dairy",
+          ["all", ["==", ["get", "shop"], "deli"]],
+          "deli",
+          ["all", ["==", ["get", "shop"], "seafood"]],
+          "seafood",
+          ["all", ["==", ["get", "shop"], "wine"]],
+          "wine",
+          ["in", ["get", "shop"], ["literal", ["greengrocer", "farm"]]],
+          "greengrocer",
+          [
+            "in",
+            ["get", "shop"],
+            ["literal", ["chocolate", "confectionery", "pastry"]]
+          ],
+          "confectionery",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#ac39ac",
+        "text-color": "#ac39ac",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_bike",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 17,
+      "filter": [
+        "all",
+        [
+          "in",
+          "amenity",
+          "bicycle_parking",
+          "bicycle_repair_station",
+          "bicycle_rental"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "bicycle_parking"]],
+          "bicycle_parking",
+          ["all", ["==", ["get", "amenity"], "bicycle_repair_station"]],
+          "bicycle_repair_station",
+          ["all", ["==", ["get", "amenity"], "bicycle_rental"]],
+          "rental_bicycle",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-offset": [0, 1],
+        "text-anchor": "top",
+        "text-size": {"stops": [[16, 0], [18, 10]]},
+        "text-max-width": 8,
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1
+      },
+      "paint": {
+        "icon-color": "#0092da",
+        "text-color": "#0092da",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_car",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 16,
+      "filter": [
+        "all",
+        ["in", "amenity", "car_rental", "car_wash", "vehicle_inspection"]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "car_rental"]],
+          "rental_car",
+          ["all", ["==", ["get", "amenity"], "car_wash"]],
+          "car_wash",
+          ["all", ["==", ["get", "amenity"], "vehicle_inspection"]],
+          "vehicle_inspection",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-offset": [0, 1],
+        "text-anchor": "top",
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-max-width": 8,
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1
+      },
+      "paint": {
+        "icon-color": "#734a08",
+        "text-color": "#734a08",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_entertainment,",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 16,
+      "filter": [
+        "all",
+        ["in", "amenity", "arts_centre", "casino", "cinema", "theatre"]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "arts_centre"]],
+          "arts_centre",
+          ["all", ["==", ["get", "amenity"], "casino"]],
+          "casino",
+          ["all", ["==", ["get", "amenity"], "cinema"]],
+          "cinema",
+          ["all", ["==", ["get", "amenity"], "theatre"]],
+          "theatre",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1
+      },
+      "paint": {
+        "icon-color": "#c77400",
+        "text-color": "#c77400",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_social",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 16,
+      "filter": [
+        "all",
+        [
+          "in",
+          "amenity",
+          "social_facility",
+          "community_centre",
+          "social_centre"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "community_centre"]],
+          "community_centre",
+          [
+            "in",
+            ["get", "amenity"],
+            ["literal", ["social_facility", "social_centre"]]
+          ],
+          "social_facility",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-offset": [0, 1],
+        "text-anchor": "top",
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-max-width": 8,
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1
+      },
+      "paint": {
+        "icon-color": "#c77400",
+        "text-color": "#c77400",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_parking",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 16,
+      "filter": [
+        "all",
+        ["in", "amenity", "parking", "parking_entrance", "motorcycle_parking"],
+        ["!in", "access", "private"]
+      ],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-offset": [0, 1],
+        "text-anchor": "top",
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-max-width": 8,
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "parking"]],
+          "parking",
+          ["all", ["==", ["get", "amenity"], "parking_entrance"]],
+          "parking_entrance_multistorey",
+          ["all", ["==", ["get", "amenity"], "motorcycle_parking"]],
+          "motorcycle_parking",
+          "0"
+        ],
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1
+      },
+      "paint": {
+        "icon-color": "#0092da",
+        "text-color": "#0092da",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_library",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 16,
+      "filter": ["all", ["in", "amenity", "library", "public_bookcase"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "library"]],
+          "library",
+          ["all", ["==", ["get", "amenity"], "public_bookcase"]],
+          "public_bookcase",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-offset": [0, 1],
+        "text-anchor": "top",
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-max-width": 8,
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1
+      },
+      "paint": {
+        "icon-color": "#c77400",
+        "text-color": "#c77400",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_education",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 16,
+      "filter": [
+        "all",
+        [
+          "in",
+          "amenity",
+          "college",
+          "school",
+          "kindergarten",
+          "language_school",
+          "research_institute",
+          "university"
+        ]
+      ],
+      "layout": {
+        "icon-image": "edu",
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-offset": [0, 1],
+        "text-anchor": "top",
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-max-width": 8,
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1
+      },
+      "paint": {
+        "icon-color": "#c77400",
+        "text-color": "#c77400",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_taxi",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 16,
+      "filter": ["all", ["in", "amenity", "taxi"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-offset": [0, 1],
+        "text-anchor": "top",
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-max-width": 8,
+        "icon-image": {"stops": [[6, "0"], [10, "taxi"]]},
+        "visibility": "visible",
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1
+      },
+      "paint": {
+        "icon-color": "#0092da",
+        "text-color": "#0092da",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_worship",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 16,
+      "filter": ["all", ["in", "amenity", "place_of_worship"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-offset": [0, 1],
+        "text-anchor": "top",
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-max-width": 8,
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "religion"], "christian"]],
+          "christian",
+          ["all", ["==", ["get", "religion"], "jewish"]],
+          "jewish",
+          ["all", ["==", ["get", "religion"], "muslim"]],
+          "muslim",
+          "place_of_worship"
+        ],
+        "visibility": "visible",
+        "icon-size": 1,
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1
+      },
+      "paint": {
+        "icon-color": "#000000",
+        "text-color": "#000000",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_financial",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 16,
+      "filter": [
+        "all",
+        ["in", "amenity", "atm", "bureau_de_change", "money_transfer", "bank"]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "atm"]],
+          "atm",
+          ["all", ["==", ["get", "amenity"], "bank"]],
+          "bank",
+          [
+            "in",
+            ["get", "amenity"],
+            ["literal", ["bureau_de_change", "money_transfer"]]
+          ],
+          "bureau_de_change",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1,
+        "visibility": "visible"
+      },
+      "paint": {
+        "icon-color": "#c77400",
+        "text-color": "#c77400",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_sustenance",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 16,
+      "filter": [
+        "all",
+        [
+          "in",
+          "amenity",
+          "bar",
+          "biergarten",
+          "cafe",
+          "fast_food",
+          "food_court",
+          "ice_cream",
+          "nightclub",
+          "pub",
+          "restaurant"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "bar"]],
+          "bar",
+          ["all", ["==", ["get", "amenity"], "biergarten"]],
+          "biergarten",
+          ["all", ["==", ["get", "amenity"], "cafe"]],
+          "cafe",
+          ["all", ["==", ["get", "amenity"], "fast_food"]],
+          "fast_food",
+          ["all", ["==", ["get", "amenity"], "ice_cream"]],
+          "ice_cream",
+          ["all", ["==", ["get", "amenity"], "pub"]],
+          "pub",
+          ["all", ["==", ["get", "amenity"], "nightclub"]],
+          "nightclub",
+          ["in", ["get", "amenity"], ["literal", ["restaurant", "food_court"]]],
+          "restaurant",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": true,
+        "icon-padding": 1,
+        "visibility": "visible"
+      },
+      "paint": {
+        "icon-color": "#c77400",
+        "text-color": "#c77400",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_bench",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 18,
+      "filter": ["all", ["==", "amenity", "bench"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": "",
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1,
+        "icon-size": {"stops": [[16, 1], [18, 1.5], [20, 2]]},
+        "icon-image": "bench"
+      },
+      "paint": {
+        "icon-color": "#c77400",
+        "text-color": "#c77400",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_facilities",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 17,
+      "filter": [
+        "all",
+        [
+          "in",
+          "amenity",
+          "bbq",
+          "drinking_water",
+          "water_point",
+          "shelter",
+          "hunting_stand",
+          "shower",
+          "telephone",
+          "toilets",
+          "internet_cafe",
+          "public_bath",
+          "fountain"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "bbq"]],
+          "bbq",
+          ["all", ["==", ["get", "amenity"], "fountain"]],
+          "fountain",
+          ["all", ["==", ["get", "amenity"], "shelter"]],
+          "shelter",
+          ["all", ["==", ["get", "amenity"], "hunting_stand"]],
+          "hunting_stand",
+          ["all", ["==", ["get", "amenity"], "shower"]],
+          "shower",
+          ["all", ["==", ["get", "amenity"], "toilets"]],
+          "toilets",
+          ["all", ["==", ["get", "amenity"], "telephone"]],
+          "telephone",
+          ["all", ["==", ["get", "amenity"], "internet_cafe"]],
+          "internet_cafe",
+          [
+            "in",
+            ["get", "amenity"],
+            ["literal", ["drinking_water", "water_point"]]
+          ],
+          "drinking_water",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1,
+        "icon-size": {"stops": [[16, 1], [18, 1.5], [20, 2]]}
+      },
+      "paint": {
+        "icon-color": "#c77400",
+        "text-color": "#c77400",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_post",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 17,
+      "filter": ["all", ["in", "amenity", "post_box", "post_office"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "post_box"]],
+          "post_box",
+          ["all", ["==", ["get", "amenity"], "post_office"]],
+          "post_office",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1
+      },
+      "paint": {
+        "icon-color": "#c77400",
+        "text-color": "#c77400",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_public",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        [
+          "in",
+          "amenity",
+          "courthouse",
+          "fire_station",
+          "police",
+          "prison",
+          "townhall"
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "courthouse"]],
+          "courthouse",
+          ["all", ["==", ["get", "amenity"], "fire_station"]],
+          "firestation",
+          ["all", ["==", ["get", "amenity"], "police"]],
+          "police",
+          ["all", ["==", ["get", "amenity"], "prison"]],
+          "prison",
+          ["all", ["==", ["get", "amenity"], "townhall"]],
+          "town_hall",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1
+      },
+      "paint": {
+        "icon-color": "#c77400",
+        "text-color": "#c77400",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_fuel",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 15,
+      "filter": ["all", ["in", "amenity", "fuel", "charging_station"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "fuel"]],
+          "fuel",
+          ["all", ["==", ["get", "amenity"], "charging_station"]],
+          "charging_station",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[17, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-offset": [0, 1],
+        "text-anchor": "top",
+        "text-size": {"stops": [[17, 0], [18, 10]]},
+        "text-max-width": 8,
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1
+      },
+      "paint": {
+        "icon-color": "#0092da",
+        "text-color": "#0092da",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_health",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 16,
+      "filter": [
+        "all",
+        ["in", "amenity", "dentist", "pharmacy", "veterinary", "doctors"]
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "dentist"]],
+          "dentist",
+          ["all", ["==", ["get", "amenity"], "pharmacy"]],
+          "pharmacy",
+          ["all", ["==", ["get", "amenity"], "veterinary"]],
+          "veterinary",
+          ["in", ["get", "amenity"], ["literal", ["doctors"]]],
+          "doctors",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[6, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[15, 10], [17, 12]]},
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1,
+        "visibility": "visible"
+      },
+      "paint": {
+        "icon-color": "#bf0000",
+        "text-color": "#bf0000",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "amenity_hospital",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "amenity",
+      "minzoom": 15,
+      "filter": ["all", ["in", "amenity", "clinic", "hospital"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["all", ["==", ["get", "amenity"], "hospital"]],
+          "hospital",
+          ["in", ["get", "amenity"], ["literal", ["clinic"]]],
+          "doctors",
+          "0"
+        ],
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[6, ""], [18, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-size": {"stops": [[15, 10], [17, 12]]},
+        "text-padding": 0,
+        "text-optional": true,
+        "icon-padding": 1,
+        "visibility": "visible"
+      },
+      "paint": {
+        "icon-color": "#bf0000",
+        "text-color": "#bf0000",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "natural_volcano",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 10,
+      "filter": ["all", ["==", "natural", "volcano"], ["has", "name"]],
+      "layout": {
+        "text-font": ["Noto Sans Regular"],
+        "icon-image": "volcano",
+        "text-field": {"stops": [[6, ""], [13, "{name}\n{ele}"]]},
+        "text-size": {"stops": [[13, 8], [15, 12]]},
+        "text-justify": "center",
+        "text-anchor": "top",
+        "text-padding": 2,
+        "icon-size": {"stops": [[12, 1.2], [14, 1.8], [16, 2.2]]},
+        "text-pitch-alignment": "viewport",
+        "icon-rotation-alignment": "viewport",
+        "text-allow-overlap": true,
+        "icon-allow-overlap": true
+      },
+      "paint": {
+        "icon-color": "#d08f55",
+        "text-translate": [0, 10],
+        "text-opacity": 1,
+        "text-color": "#bf0000",
+        "text-halo-width": 2,
+        "text-halo-color": "#FFFFFF",
+        "text-translate-anchor": "viewport",
+        "icon-opacity": 1
+      }
+    },
+    {
+      "id": "natural_peak",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 10,
+      "filter": ["all", ["==", "natural", "peak"], ["has", "name"]],
+      "layout": {
+        "text-font": ["Noto Sans Regular"],
+        "icon-image": "peak",
+        "text-field": {"stops": [[6, ""], [13, "{name}\n{ele}"]]},
+        "text-size": {"stops": [[13, 8], [15, 12]]},
+        "text-justify": "center",
+        "text-anchor": "top",
+        "text-padding": 2,
+        "icon-size": {"stops": [[12, 1.2], [14, 1.8], [16, 2.2]]},
+        "text-pitch-alignment": "viewport",
+        "icon-rotation-alignment": "viewport",
+        "text-allow-overlap": true,
+        "icon-allow-overlap": true
+      },
+      "paint": {
+        "icon-color": "#d08f55",
+        "text-translate": [0, 10],
+        "text-opacity": 1,
+        "text-color": "#5D4129",
+        "text-halo-width": 2,
+        "text-halo-color": "#FFFFFF",
+        "text-translate-anchor": "viewport",
+        "icon-opacity": 1
+      }
+    },
+    {
+      "id": "natural_cave",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 15,
+      "filter": ["all", ["==", "natural", "cave_entrance"]],
+      "layout": {
+        "text-font": ["Noto Sans Regular"],
+        "icon-image": "cave",
+        "text-field": {"stops": [[6, ""], [16, "{name}"]]},
+        "text-size": 12,
+        "text-justify": "center",
+        "text-anchor": "top",
+        "text-padding": 2,
+        "icon-size": 1,
+        "icon-rotation-alignment": "viewport",
+        "text-pitch-alignment": "map",
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#2F2F2F",
+        "text-translate": [0, 8],
+        "text-opacity": 1,
+        "text-color": "#2F2F2F",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "natural_saddle",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 14,
+      "filter": [
+        "any",
+        ["==", "natural", "saddle"],
+        ["==", "mountain_pass", "yes"]
+      ],
+      "layout": {
+        "text-font": ["Noto Sans Regular"],
+        "icon-image": "saddle",
+        "text-field": {"stops": [[6, ""], [15, "{name}\n{ele}"]]},
+        "text-size": {"stops": [[13, 8], [15, 12]]},
+        "text-justify": "center",
+        "text-anchor": "top",
+        "text-padding": 2,
+        "text-pitch-alignment": "viewport",
+        "icon-rotation-alignment": "viewport",
+        "icon-size": {"stops": [[14, 1.7], [16, 2.5]]}
+      },
+      "paint": {
+        "icon-color": "#d08f55",
+        "text-translate": [0, 8],
+        "text-opacity": 1,
+        "text-color": "#553E27",
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(245, 243, 243, 1)"
+      }
+    },
+    {
+      "id": "natural_water-name",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 11,
+      "filter": ["all", ["in", "natural", "water"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[10, ""], [12, "{name}"]]},
+        "text-pitch-alignment": "map",
+        "text-anchor": "center",
+        "text-offset": [0, 0],
+        "text-size": {"stops": [[13, 10], [18, 14]]},
+        "text-padding": 0,
+        "icon-padding": 1,
+        "icon-allow-overlap": false,
+        "text-allow-overlap": false,
+        "text-optional": false,
+        "symbol-placement": "point"
+      },
+      "paint": {
+        "icon-color": "#628fbc",
+        "text-color": "rgba(38, 52, 65, 1)",
+        "text-halo-color": "#DDD",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "natural_ spring",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 14,
+      "filter": ["all", ["==", "natural", "spring"]],
+      "layout": {
+        "text-font": ["Noto Sans Regular"],
+        "text-field": {"stops": [[6, ""], [15, "{name}"]]},
+        "text-size": 12,
+        "text-justify": "center",
+        "text-anchor": "top",
+        "text-padding": 2,
+        "icon-size": {"stops": [[14, 0.8], [16, 1]]},
+        "icon-image": "spring",
+        "icon-rotation-alignment": "map",
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#7FBAFA",
+        "text-translate": [0, 8],
+        "text-opacity": 1,
+        "text-color": "#6A9BCF",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 2,
+        "text-halo-blur": 6
+      }
+    },
+    {
+      "id": "natural_ bay",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 13,
+      "filter": ["all", ["==", "natural", "bay"]],
+      "layout": {
+        "text-font": ["Noto Sans Regular"],
+        "text-field": "{name}",
+        "text-size": {"stops": [[13, 10], [16, 12]]},
+        "text-justify": "center",
+        "text-anchor": "top",
+        "text-padding": 2,
+        "icon-size": 0.8,
+        "icon-rotation-alignment": "map",
+        "text-optional": false,
+        "text-allow-overlap": true,
+        "text-pitch-alignment": "map"
+      },
+      "paint": {
+        "icon-color": "#7FBAFA",
+        "text-translate": [0, 8],
+        "text-opacity": 1,
+        "text-color": "#062BED",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 2,
+        "text-halo-blur": 6
+      }
+    },
+    {
+      "id": "natural_ beach",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "natural",
+      "minzoom": 14,
+      "filter": ["all", ["==", "natural", "beach"]],
+      "layout": {
+        "text-font": ["Noto Sans Regular"],
+        "text-field": "{name}",
+        "text-size": {"stops": [[14, 8], [16, 12]]},
+        "text-justify": "center",
+        "text-anchor": "top",
+        "text-padding": 2,
+        "icon-rotation-alignment": "map",
+        "text-optional": false,
+        "text-allow-overlap": true,
+        "icon-allow-overlap": true,
+        "text-pitch-alignment": "map",
+        "text-rotate": 0,
+        "visibility": "visible",
+        "text-max-width": 8,
+        "icon-size": 5,
+        "symbol-placement": "point"
+      },
+      "paint": {
+        "icon-color": "#7FBAFA",
+        "text-translate": [0, 0],
+        "text-opacity": 1,
+        "text-color": "#062BED",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 2,
+        "text-halo-blur": 6
+      }
+    },
+    {
+      "id": "city_lab-farm",
+      "type": "symbol",
+      "metadata": {"maputnik:comment": "edificio"},
+      "source": "euskadi",
+      "source-layer": "city_lab",
+      "minzoom": 15,
+      "maxzoom": 19,
+      "filter": ["any", ["in", "kind", "quarter", "isolated_dwelling", "farm"]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-allow-overlap": false,
+        "text-size": 12,
+        "text-pitch-alignment": "map",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-halo-color": "rgba(253, 253, 253, 1)",
+        "text-halo-blur": 6,
+        "text-halo-width": 2,
+        "text-color": "rgba(67, 67, 67, 1)"
+      }
+    },
+    {
+      "id": "city_lab-neighbour",
+      "type": "symbol",
+      "metadata": {"maputnik:comment": "barrio"},
+      "source": "euskadi",
+      "source-layer": "city_lab",
+      "minzoom": 13,
+      "maxzoom": 19,
+      "filter": ["any", ["in", "kind", "neighbourhood", "locality", "hamlet"]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-allow-overlap": false,
+        "text-size": {"stops": [[13, 10], [15, 14]]},
+        "text-pitch-alignment": "viewport"
+      },
+      "paint": {
+        "text-halo-color": "rgba(253, 253, 253, 1)",
+        "text-halo-blur": 6,
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "city_lab-square",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "place_lab",
+      "minzoom": 16,
+      "maxzoom": 24,
+      "filter": ["any", ["in", "kind", "square"]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-allow-overlap": true,
+        "text-size": {"stops": [[16, 8], [18, 14]]},
+        "text-pitch-alignment": "viewport",
+        "icon-allow-overlap": false,
+        "icon-size": 1,
+        "symbol-placement": "point"
+      },
+      "paint": {
+        "text-halo-color": "rgba(253, 253, 253, 1)",
+        "text-halo-blur": 6,
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "city_lab-island",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "place_lab",
+      "minzoom": 12,
+      "maxzoom": 17,
+      "filter": ["any", ["in", "kind", "island", "islet"]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-allow-overlap": false,
+        "text-size": {"stops": [[12, 10], [16, 18]]},
+        "text-pitch-alignment": "viewport",
+        "icon-allow-overlap": false
+      },
+      "paint": {
+        "text-halo-color": "rgba(253, 253, 253, 1)",
+        "text-halo-blur": 6,
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "city_lab-suburb",
+      "type": "symbol",
+      "metadata": {"maputnik:comment": "parte de municipio,\nmayor que barrio"},
+      "source": "euskadi",
+      "source-layer": "city_lab",
+      "minzoom": 12,
+      "maxzoom": 17,
+      "filter": ["any", ["in", "kind", "suburb", "village"]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-allow-overlap": false,
+        "text-size": {"stops": [[12, 10], [16, 18]]},
+        "text-pitch-alignment": "viewport"
+      },
+      "paint": {
+        "text-halo-color": "rgba(253, 253, 253, 1)",
+        "text-halo-blur": 6,
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "city_lab-8-great",
+      "type": "symbol",
+      "metadata": {"maputnik:comment": "Municipios"},
+      "source": "euskadi",
+      "source-layer": "city_lab",
+      "minzoom": 9,
+      "maxzoom": 16,
+      "filter": [
+        "all",
+        [">", ["get", "population"], 5000],
+        ["==", ["get", "capital"], ["literal", "8"]],
+        ["in", ["get", "kind"], ["literal", ["town", "village", "city"]]]
+      ],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-allow-overlap": true,
+        "text-size": {"stops": [[8, 8], [10, 10], [14, 22]]},
+        "text-pitch-alignment": "viewport",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-halo-color": "rgba(253, 253, 253, 1)",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "city_lab-8",
+      "type": "symbol",
+      "metadata": {"maputnik:comment": "Municipios"},
+      "source": "euskadi",
+      "source-layer": "city_lab",
+      "minzoom": 10,
+      "maxzoom": 16,
+      "filter": [
+        "any",
+        ["==", ["get", "capital"], ["literal", "8"]],
+        ["==", ["get", "kind"], "town"]
+      ],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-allow-overlap": true,
+        "text-size": {"stops": [[10, 10], [14, 22]]},
+        "text-pitch-alignment": "viewport",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-halo-color": "rgba(253, 253, 253, 1)",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "city_lab-7",
+      "type": "symbol",
+      "metadata": {
+        "maputnik:comment": "Partidos judiciales, comarcas y cuadrillas. "
+      },
+      "source": "euskadi",
+      "source-layer": "city_lab",
+      "minzoom": 8,
+      "maxzoom": 15,
+      "filter": ["all", ["==", ["get", "capital"], ["literal", "7"]]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-allow-overlap": true,
+        "text-size": {"stops": [[8, 8], [14, 22]]},
+        "text-pitch-alignment": "viewport"
+      },
+      "paint": {
+        "text-halo-color": "rgba(253, 253, 253, 1)",
+        "text-halo-blur": 6,
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "city_lab-6",
+      "type": "symbol",
+      "metadata": {"maputnik:comment": "Provincia"},
+      "source": "euskadi",
+      "source-layer": "city_lab",
+      "minzoom": 6,
+      "maxzoom": 14,
+      "filter": ["all", ["==", ["get", "capital"], ["literal", "6"]]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-allow-overlap": true,
+        "text-size": {"stops": [[6, 10], [14, 22]]},
+        "text-pitch-alignment": "viewport"
+      },
+      "paint": {
+        "text-halo-color": "rgba(253, 253, 253, 1)",
+        "text-halo-blur": 6,
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "city_lab-4",
+      "type": "symbol",
+      "metadata": {"maputnik:comment": "Autonomia"},
+      "source": "euskadi",
+      "source-layer": "city_lab",
+      "minzoom": 4,
+      "maxzoom": 14,
+      "filter": ["all", ["==", ["get", "capital"], ["literal", "4"]]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Bold"],
+        "text-allow-overlap": true,
+        "text-size": {"stops": [[6, 10], [14, 22]]},
+        "text-pitch-alignment": "viewport",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-halo-color": "rgba(253, 253, 253, 1)",
+        "text-halo-blur": 6,
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "city_lab-capital",
+      "type": "symbol",
+      "metadata": {"maputnik:comment": "Capital"},
+      "source": "euskadi",
+      "source-layer": "city_lab",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", ["get", "kind"], "capital"],
+        ["!=", ["get", "capital"], ["literal", "4"]]
+      ],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Bold"],
+        "text-allow-overlap": true,
+        "text-size": {"stops": [[6, 12], [9, 22]]},
+        "text-pitch-alignment": "viewport",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-halo-color": "rgba(253, 253, 253, 1)",
+        "text-halo-blur": 6,
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "enforcement",
+      "type": "symbol",
+      "source": "euskadi",
+      "source-layer": "enforcement",
+      "minzoom": 14,
+      "layout": {"text-field": "", "icon-image": "camera_speed"}
+    },
+    {
+      "id": "ROUTE",
+      "type": "line",
+      "source": "euskadi",
+      "source-layer": "routes",
+      "layout": {"visibility": "visible"},
+      "paint": {"line-color": "rgba(235, 9, 9, 1)", "line-width": 6}
+    }
+  ],
+  "id": "wl884w9mo"
+}

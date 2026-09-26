@@ -13,7 +13,7 @@
       "maxzoom": 14
     }
   },
-  "sprite": "http://localhost:8100/img/sprite",
+  "sprite": "http://localhost:8200/img/sprite",
   "glyphs": "http://localhost:8100/font/{fontstack}/{range}.pbf",
   "layers": [
     {

@@ -1,0 +1,195 @@
+{
+  "version": 8,
+  "name": "test_style",
+  "metadata": {"maputnik:renderer": "mbgljs"},
+  "center": [-2.68, 42.86],
+  "zoom": 11,
+  "sources": {
+    "test": {
+      "type": "geojson",
+      "data": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [-2.695953, 42.866275]
+            },
+            "properties": {"type": "circle"}
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [-2.672089, 42.866846]
+            },
+            "properties": {"type": "circle_transp"}
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [-2.719947, 42.853346]
+            },
+            "properties": {"type": "symbol", "value": "Text"}
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [-2.706977, 42.853916]
+            },
+            "properties": {"type": "symbol_transp", "value": "Text Transp"}
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [[-2.659378, 42.866465], [-2.64135, 42.868271]]
+            },
+            "properties": {"type": "line"}
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [[-2.658989, 42.862948], [-2.640702, 42.864944]]
+            },
+            "properties": {"type": "line_transp"}
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [-2.677406, 42.857054],
+                  [-2.677406, 42.850588],
+                  [-2.665604, 42.850588],
+                  [-2.665604, 42.857054],
+                  [-2.677406, 42.857054]
+                ]
+              ]
+            },
+            "properties": {"type": "polygon"}
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [-2.655877, 42.855342],
+                  [-2.655877, 42.847831],
+                  [-2.639924, 42.847831],
+                  [-2.639924, 42.855342],
+                  [-2.655877, 42.855342]
+                ]
+              ]
+            },
+            "properties": {"type": "polygon_transp"}
+          }
+        ]
+      }
+    }
+  },
+  "sprite": "http://localhost:8100/img/sprite",
+  "glyphs": "http://localhost:8100/font/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "all",
+      "type": "circle",
+      "source": "test",
+      "layout": {"visibility": "none"}
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "test",
+      "filter": ["==", ["get", "type"], "circle"],
+      "paint": {
+        "circle-radius": 6,
+        "circle-color": "rgba(130, 0, 255, 1)",
+        "circle-stroke-color": "rgba(11, 233, 221, 1)",
+        "circle-stroke-width": 4,
+        "circle-opacity": 0.5,
+        "circle-stroke-opacity": 0.5
+      }
+    },
+    {
+      "id": "circle-transp",
+      "type": "circle",
+      "source": "test",
+      "filter": ["==", ["get", "type"], "circle_transp"],
+      "paint": {
+        "circle-radius": 6,
+        "circle-color": "#ff0000",
+        "circle-stroke-color": "rgba(0, 31, 255, 1)",
+        "circle-stroke-width": 4,
+        "circle-opacity": 0.5,
+        "circle-stroke-opacity": 0.5
+      }
+    },
+    {
+      "id": "symbol-transp",
+      "type": "symbol",
+      "source": "test",
+      "filter": ["==", ["get", "type"], "symbol_transp"],
+      "layout": {
+        "text-field": "{value}",
+        "text-font": ["Noto Sans Regular"],
+        "icon-image": "tree",
+        "text-anchor": "center",
+        "text-offset": [0, 1]
+      },
+      "paint": {"text-opacity": 0.5, "icon-opacity": 0.5}
+    },
+    {
+      "id": "symbol",
+      "type": "symbol",
+      "source": "test",
+      "filter": ["==", ["get", "type"], "symbol"],
+      "layout": {
+        "text-field": "{value}",
+        "text-font": ["Noto Sans Regular"],
+        "icon-image": "tree",
+        "text-anchor": "center",
+        "text-offset": [0, 1]
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "test",
+      "filter": ["==", ["get", "type"], "line"],
+      "paint": {"line-width": 8}
+    },
+    {
+      "id": "line-transp",
+      "type": "line",
+      "source": "test",
+      "filter": ["==", ["get", "type"], "line_transp"],
+      "paint": {
+        "line-color": "rgba(253, 0, 0, 1)",
+        "line-width": 8,
+        "line-opacity": 0.5
+      }
+    },
+    {
+      "id": "poly",
+      "type": "fill",
+      "source": "test",
+      "filter": ["==", ["get", "type"], "polygon"],
+      "paint": {"fill-color": "rgba(245, 173, 5, 1)"}
+    },
+    {
+      "id": "poly-transp",
+      "type": "fill",
+      "source": "test",
+      "filter": ["==", ["get", "type"], "polygon_transp"],
+      "paint": {"fill-opacity": 0.5, "fill-color": "rgba(253, 2, 2, 1)"}
+    }
+  ],
+  "id": "qhztba2cv"
+}

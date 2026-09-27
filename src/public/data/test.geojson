@@ -1,0 +1,163 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "type": "circle"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.695953,
+                    42.866275
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "type": "circle_transp"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.672089,
+                    42.866846
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "type": "symbol",
+                "value": "Text"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.719947,
+                    42.853346
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "type": "symbol_transp",
+                "value": "Text Transp"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.706977,
+                    42.853916
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "type": "line"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -2.659378,
+                        42.866465
+                    ],
+                    [
+                        -2.64135,
+                        42.868271
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "type": "line_transp"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -2.658989,
+                        42.862948
+                    ],
+                    [
+                        -2.640702,
+                        42.864944
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "type": "polygon"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -2.677406,
+                            42.857054
+                        ],
+                        [
+                            -2.677406,
+                            42.850588
+                        ],
+                        [
+                            -2.665604,
+                            42.850588
+                        ],
+                        [
+                            -2.665604,
+                            42.857054
+                        ],
+                        [
+                            -2.677406,
+                            42.857054
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "type": "polygon_transp"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -2.655877,
+                            42.855342
+                        ],
+                        [
+                            -2.655877,
+                            42.847831
+                        ],
+                        [
+                            -2.639924,
+                            42.847831
+                        ],
+                        [
+                            -2.639924,
+                            42.855342
+                        ],
+                        [
+                            -2.655877,
+                            42.855342
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}

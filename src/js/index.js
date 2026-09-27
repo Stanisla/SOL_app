@@ -2,6 +2,9 @@
 import { makePmtilesSource } from './capacitorPmTiles.js';
 import * as maplibregl from 'https://unpkg.com/maplibre-gl@6.10.0/dist/maplibre-gl.mjs';
 import { beforeStart, parseStyle } from './beforeMap.js'
+import { getLayers, addLayers } from './layers.js'
+import { OpacityControl } from './opacity.js'
+window.maplibregl = maplibregl
 // At start up application, copy data, styles...
 beforeStart()
 // Registering pmtiles
@@ -23,14 +26,14 @@ maplibregl.addProtocol(pmtilesProtocol, function (params, callback) {
 });
 // this is so we share one instance across the JS code and the map renderer
 protocolVector.add(p);
-const styleEukadi = await parseStyle('./styles/euskadi.json', {
+export const styleOsm = await parseStyle('./styles/osm.json', {
     fileName: pmtilesFile,
     protocol: pmtilesProtocol
 })
 
 const map = new maplibregl.Map({
     container: 'map', // container id
-    style: styleEukadi, // style URL
+    style: styleOsm, // style URL
     maxZoom: 24,
     maxPitch: 85,
     center: [-2.676, 42.84],
@@ -39,3 +42,20 @@ const map = new maplibregl.Map({
     hash: true
 })
 window.map = map
+
+async function addOpacityControl() {
+    const { mapBaseLayer, mapOverLayer } = getLayers();
+    // OpacityControl
+    let Opacity = new OpacityControl({
+        baseLayers: mapBaseLayer,
+        overLayers: mapOverLayer,
+        opacityControl: true,
+        collapsed: true,
+    });
+    await addLayers()
+    map.addControl(Opacity, 'top-right');
+
+}
+map.on('load', () => {    
+    addOpacityControl();
+});

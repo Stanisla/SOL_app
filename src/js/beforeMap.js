@@ -22,9 +22,10 @@ export async function parseStyle(styleUrl, { fileName, protocol }) {
 
     style.sprite = changeOrigin(style.sprite);
     style.glyphs = changeOrigin(style.glyphs);
-
-    changeSourceUrl(style, { fileName, protocol });
-
+    // if fileName and protocol are not undefined. For parsing geojson and stuffs like this
+    if( fileName  && protocol  ) {  
+        changeSourceUrl(style, { fileName, protocol });
+    }
     return style;
 }
 

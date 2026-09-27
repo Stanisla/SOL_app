@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "name": "euskadi",
+  "name": "vectorOSM",
   "metadata": {
     "maputnik:renderer": "mbgljs"
   },
@@ -13,7 +13,7 @@
       "maxzoom": 14
     }
   },
-  "sprite": "http://localhost:8200/img/sprite",
+  "sprite": "http://localhost:8100/img/sprite",
   "glyphs": "http://localhost:8100/font/{fontstack}/{range}.pbf",
   "layers": [
     {
@@ -497,7 +497,7 @@
       "paint": {"fill-color": "#fecac5"}
     },
     {
-      "id": "landuse_salt pond",
+      "id": "landuse_pond",
       "type": "fill",
       "source": "euskadi",
       "source-layer": "landuse",
@@ -766,7 +766,7 @@
       }
     },
     {
-      "id": "natural_ tree",
+      "id": "natural_tree",
       "type": "symbol",
       "source": "euskadi",
       "source-layer": "natural",
@@ -5986,7 +5986,7 @@
       }
     },
     {
-      "id": "natural_ spring",
+      "id": "natural_spring",
       "type": "symbol",
       "source": "euskadi",
       "source-layer": "natural",
@@ -6015,7 +6015,7 @@
       }
     },
     {
-      "id": "natural_ bay",
+      "id": "natural_bay_symbol",
       "type": "symbol",
       "source": "euskadi",
       "source-layer": "natural",
@@ -6045,7 +6045,7 @@
       }
     },
     {
-      "id": "natural_ beach",
+      "id": "natural_beach_symbol",
       "type": "symbol",
       "source": "euskadi",
       "source-layer": "natural",

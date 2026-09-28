@@ -1,5 +1,5 @@
 import { styleOsm } from './index.js'
-import { parseStyle } from './beforeMap.js';
+import { parseStyle } from './pmtilesLoader.js';
 
 const testStyle = await parseStyle('./styles/test_style.json', {})
 export async function addLayers(){

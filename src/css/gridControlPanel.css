@@ -1,5 +1,5 @@
 .grid-control-panel {  
-  background: white;
+  background: #ffffff88;
   border-radius: 6px;
   padding: 6px;
   box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
@@ -7,7 +7,7 @@
 .grid-control-toggle {
   width: 24px;
   height: 24px;
-  background-color: transparent;
+  background-color: white;
   background-image: url(../img/tools.svg);
   background-size: contain;
   background-repeat: no-repeat;

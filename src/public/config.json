@@ -1,0 +1,8 @@
+{
+  "dataSources": {
+    "osm": { "folder": "osm", "file": "mapExample.pmtiles", "protocol": "vector" }
+  },
+  "styles": {
+    "osm":     { "path": "./styles/osm.json",     "source": "osm" }
+  }
+}

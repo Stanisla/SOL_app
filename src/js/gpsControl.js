@@ -12,8 +12,6 @@ const gpsOptions ={
 }
 // What is going to show
 const gpsFields = {
-    //lon: { label: 'Lon', show: true, format: c => c.longitude.toFixed(4) },
-    //lat: { label: 'Lat', show: true, format: c => c.latitude.toFixed(4) },
     coord: {
         label: '', show: true,
         style: { whiteSpace: 'pre-line' },
@@ -24,8 +22,8 @@ const gpsFields = {
     // In Spain this can differ from map altitudes by around 50 m.
     alt: { label: '', show: true, format: c => c.altitude != null ? (c.altitude -50).toFixed(0) + ' m' : '–' },
     speed: { label: '', show: true, format: c => c.speed != null ? (c.speed * 3.6).toFixed(kmperhour < 10 ? 1 : 0) + ' km/h' : '–' },
-    acc: { label: 'Acc', show: true, format: c => c.accuracy.toFixed(0) + ' m' },
-    altAcc: { label: 'Alt acc', show: true, format: c => c.altitudeAccuracy != null ? c.altitudeAccuracy.toFixed(0) + ' m' : '–' },
+    acc: { label: 'Acc', show: false, format: c => c.accuracy.toFixed(0) + ' m' },
+    altAcc: { label: 'Alt acc', show: false, format: c => c.altitudeAccuracy != null ? c.altitudeAccuracy.toFixed(0) + ' m' : '–' },
 };
 var gpsOpClicked=false
 //Object for showing

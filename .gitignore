@@ -7,6 +7,7 @@ node_modules/
 dist/
 android/
 .git/
+plugin/.gradle
 jsbak/
 private/
 doc.txt

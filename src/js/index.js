@@ -1,37 +1,16 @@
-
-import { makePmtilesSource } from './capacitorPmTiles.js';
 import * as maplibregl from 'https://unpkg.com/maplibre-gl@6.10.0/dist/maplibre-gl.mjs';
-import { beforeStart, parseStyle } from './beforeMap.js'
+import { beforeStart } from './beforeMap.js'
 import { setMap } from './mapInstance.js';
+import { loadStyle } from './pmtilesLoader.js';
 import { addControls } from './addControls.js';
 
 
 window.maplibregl = maplibregl
 // At start up application, copy data, styles...
-beforeStart()
-// Registering pmtiles
-const pmtilesFolder = 'osm'
-const pmtilesFile = 'mapExample.pmtiles'
-const pmtilesProtocol = 'vector'
-// Native uses PmtilesReader plugin (random access) See capacitorPmTiles.js
-const source = await makePmtilesSource(pmtilesFolder, pmtilesFile); 
-// string URL on web, Source object on native
-const p = new pmtiles.PMTiles(source);
-const protocolVector = new pmtiles.Protocol();
-// protocol.tile only understand URLs start with pmtile:// . It's hardcoded
-// Add a handler to convert vector:// to pmtiles://
-maplibregl.addProtocol(pmtilesProtocol, function (params, callback) {
-    const modifiedParams = Object.assign({}, params, {
-        url: params.url.replace(new RegExp('^' + pmtilesProtocol + '://'), 'pmtiles://')
-    });
-    return protocolVector.tile(modifiedParams, callback);
-});
-// this is so we share one instance across the JS code and the map renderer
-protocolVector.add(p);
-export const styleOsm = await parseStyle('./styles/osm.json', {
-    fileName: pmtilesFile,
-    protocol: pmtilesProtocol
-})
+await beforeStart()
+console.log("test  vite")
+
+export const styleOsm = await loadStyle('osm');
 
 const map = new maplibregl.Map({
     container: 'map', // container id

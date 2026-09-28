@@ -2,8 +2,10 @@
 import { makePmtilesSource } from './capacitorPmTiles.js';
 import * as maplibregl from 'https://unpkg.com/maplibre-gl@6.10.0/dist/maplibre-gl.mjs';
 import { beforeStart, parseStyle } from './beforeMap.js'
-import { getLayers, addLayers } from './layers.js'
-import { OpacityControl } from './opacity.js'
+import { setMap } from './mapInstance.js';
+import { addControls } from './addControls.js';
+
+
 window.maplibregl = maplibregl
 // At start up application, copy data, styles...
 beforeStart()
@@ -42,20 +44,7 @@ const map = new maplibregl.Map({
     hash: true
 })
 window.map = map
-
-async function addOpacityControl() {
-    const { mapBaseLayer, mapOverLayer } = getLayers();
-    // OpacityControl
-    let Opacity = new OpacityControl({
-        baseLayers: mapBaseLayer,
-        overLayers: mapOverLayer,
-        opacityControl: true,
-        collapsed: true,
-    });
-    await addLayers()
-    map.addControl(Opacity, 'top-right');
-
-}
-map.on('load', () => {    
-    addOpacityControl();
+setMap(map)
+map.on('load', () => {
+    addControls();
 });

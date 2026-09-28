@@ -4,9 +4,9 @@ import { parseStyle } from './beforeMap.js';
 const testStyle = await parseStyle('./styles/test_style.json', {})
 export async function addLayers(){
     // test_style (geojson group)
-    const sourceId = Object.keys(testStyle.sources)[0];
+    /*const sourceId = Object.keys(testStyle.sources)[0];
     map.addSource(sourceId, testStyle.sources[sourceId]);
-    testStyle.layers.forEach(layer => map.addLayer(layer));
+    testStyle.layers.forEach(layer => map.addLayer(layer));*/
     // OpenStreetMap
     map.addSource('o_std', {
         type: 'raster',

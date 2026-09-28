@@ -2,11 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <title>Awesome Capacitor App</title>
-    <meta
-      name="viewport"
-      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <title>SpainOffLine</title>
+    <meta property="og:description" content="Using offline files to present a map." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
 
@@ -14,22 +12,14 @@
     <link rel="manifest" href="./manifest.json" />    
     <meta name="theme-color" content="#31d53d" />
     <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@6.10.0/dist/maplibre-gl.css' />
+    <link rel='stylesheet' href='./css/maplibre-gl-mine.css' />
     <link rel='stylesheet' href='./css/maplibre-gl-opacity.css' />
+    <link rel='stylesheet' href='./css/gridControlPanel.css' />
     <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
     
-    
-    
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-    
-      html,
-      body,
-      #map {
-        height: 100%;
-      }
+      body {margin: 0;padding: 0;}
+      html,body,#map {height: 100%;}
     </style>
   </head>
   <body>    

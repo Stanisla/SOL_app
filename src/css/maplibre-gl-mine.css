@@ -1,17 +1,42 @@
-/* . para la clase, # para el id*/
-/*#search-box {
-  width: 350px;
-  padding: 50px 0;
-  top: -10%;  
-  position: absolute;
-  z-index: 1000;
-  display: inline-block;
-  text-align: center;
-  margin-top: 20px;
-  height:10px;
-  background-color:lightblue; 
-}*/
+/*Patch for controls inside capacitor app.
+It takes into acount the disposable area, so the android system bar doesn't overlap with maplibre controls*/
+/* Global variable */
+:root {
+  --ctrl-margin: 12px;
+}
 
+/* Calculate Safe-area variables (one set per corner container) */
+.maplibregl-ctrl-top-right,
+.maplibregl-ctrl-top-left,
+.maplibregl-ctrl-bottom-right,
+.maplibregl-ctrl-bottom-left {
+  --safe-top: calc(env(safe-area-inset-top, 0px) + var(--ctrl-margin));
+  --safe-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--ctrl-margin));
+  --safe-right: calc(env(safe-area-inset-right, 0px) + var(--ctrl-margin));
+  --safe-left: calc(env(safe-area-inset-left, 0px) + var(--ctrl-margin));
+}
+
+/* Edge offset on the corner container: applied once,
+   no matter how many controls it holds */
+.maplibregl-ctrl-top-right {
+  margin-top: var(--safe-top);
+  margin-right: var(--safe-right);
+}
+
+.maplibregl-ctrl-top-left {
+  margin-top: var(--safe-top);
+  margin-left: var(--safe-left);
+}
+
+.maplibregl-ctrl-bottom-right {
+  margin-bottom: var(--safe-bottom);
+  margin-right: var(--safe-right);
+}
+
+.maplibregl-ctrl-bottom-left {
+  margin-bottom: var(--safe-bottom);
+  margin-left: var(--safe-left);
+}
 #result {
   float: left;
   height: 100%;
@@ -140,6 +165,13 @@
   color: black;
 }
 
+#coordLabel {
+  width: 30px;
+  height: 20px;
+  display: inline-block;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' fill='%23333' viewBox='10 10 22 22'%3E%3Cpath d='M20,29c-0.5,0-1-0.3-1.3-0.8L14.5,21c-1.8-3.1-0.9-7.2,2.1-9c1-0.6,2.2-1,3.4-1c2.3,0,4.5,1.2,5.6,3.3c1.1,2,1.2,4.4,0,6.4c0,0,0,0,0,0.1l-4.3,7.5C21,28.7,20.5,29,20,29z M20,12c-1,0-2,0.3-2.9,0.8c-2.5,1.5-3.3,5-1.7,7.6l4.2,7.3C19.7,28,19.9,28,20,28c0.1,0,0.3,0,0.4-0.3l4.3-7.4c0,0,0,0,0-0.1c1-1.7,1-3.8,0-5.5C23.8,13.1,22,12,20,12z M20,20c-1.4,0-2.5-1.1-2.5-2.5S18.6,15,20,15s2.5,1.1,2.5,2.5S21.4,20,20,20z M20,16c-0.8,0-1.5,0.7-1.5,1.5S19.2,19,20,19s1.5-0.7,1.5-1.5S20.8,16,20,16z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
 #altLabel {
     width: 30px;
     height: 20px;

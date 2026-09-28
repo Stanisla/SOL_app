@@ -1,7 +1,7 @@
 // https://capacitorjs.com/docs/apis/device
 import { Device } from '@capacitor/device';
 //https://capacitorjs.com/docs/apis/filesystem
-import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Directory } from '@capacitor/filesystem';
 import {copyFile} from './androidFileSystem'
 export async function beforeStart(){
     const deviceInfo = await Device.getInfo()
@@ -10,7 +10,10 @@ export async function beforeStart(){
     console.log(platform)
     if (platform == "android"){
         await copyFile('./data/mapExample.pmtiles','osm/mapExample.pmtiles',Directory.External,
-            (done, total) => console.log(`${(done / 1e6).toFixed(0)} MB${total ? ' / ' + (total / 1e6).toFixed(0) + ' MB' : ''}`)            
+            (done, total) => console.warn(`${(done / 1e6).toFixed(0)} MB${total ? ' / ' + (total / 1e6).toFixed(0) + ' MB' : ''}`)            
+        )
+        await copyFile('./data/demExample.pmtiles', 'dem/demExample.pmtiles', Directory.External,
+            (done, total) => console.warn(`${(done / 1e6).toFixed(0)} MB${total ? ' / ' + (total / 1e6).toFixed(0) + ' MB' : ''}`)
         )
     }
 }

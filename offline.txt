@@ -1,0 +1,24 @@
+https://claude.ai/chat/39d1bcfa-cbe3-4d25-9438-0d2b6b9d0bfc
+The goal
+
+Run MapLibre GL JS 6.11.2 and PMTiles fully offline in a Capacitor app, without loading files from unpkg.
+
+What happened
+
+Version 6 changed the packaging. It is ESM only (.mjs). The UMD build and the CSP build no longer exist. The worker now lives in its own file (maplibre-gl-worker.mjs), which imports a third file (maplibre-gl-shared.mjs).
+Importing the copied file from public/ made Vite bundle it, so the worker path broke. This caused "Worker failed to load" on Android.
+The migration guide says that bundlers need a setWorkerUrl() call, because import.meta.url does not find the worker inside a bundle.
+Using ?url for the worker copied only the worker to assets/, not the shared file it imports. Android returned a red 404 for maplibre-gl-shared.mjs. The dev server hid the problem because it serves files directly from node_modules.
+PMTiles had the same kind of problem. A plain <script> file is ignored by the Vite build, so Android returned 404. Also, pmtilesLoader.js used the globals pmtiles, maplibregl and Capacitor, which no longer exist after switching to npm.
+
+How it was resolved
+
+Installed maplibre-gl@6.11.2 and pmtiles@4.5.0 with npm, and imported them (import * as maplibregl from 'maplibre-gl').
+Copied maplibre-gl-worker.mjs and maplibre-gl-shared.mjs together into public/mapLibre/, and set maplibregl.setWorkerUrl('/mapLibre/maplibre-gl-worker.mjs').
+Removed pmtiles4.js and its <script> tag.
+Added the missing imports in pmtilesLoader.js, and restarted Vite with --force to rebuild its dependency cache.
+Built with npm run build, then npx cap sync android, and rebuilt in Android Studio.
+
+One thing to remember
+
+When you update MapLibre, copy the new worker and shared files into public/mapLibre/ again. The two files must come from the same version as the npm package. The postinstall script I suggested can do this automatically.

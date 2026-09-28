@@ -1,4 +1,5 @@
-import * as maplibregl from 'https://unpkg.com/maplibre-gl@6.10.0/dist/maplibre-gl.mjs';
+import * as maplibregl from 'maplibre-gl';
+maplibregl.setWorkerUrl('/mapLibre/maplibre-gl-worker.mjs');
 import { beforeStart } from './beforeMap.js'
 import { setMap } from './mapInstance.js';
 import { loadStyle } from './pmtilesLoader.js';

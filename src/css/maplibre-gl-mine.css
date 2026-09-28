@@ -2,7 +2,7 @@
 It takes into acount the disposable area, so the android system bar doesn't overlap with maplibre controls*/
 /* Global variable */
 :root {
-  --ctrl-margin: 12px;
+  --ctrl-margin: 8px;
 }
 
 /* Calculate Safe-area variables (one set per corner container) */
@@ -92,11 +92,11 @@ It takes into acount the disposable area, so the android system bar doesn't over
   float:left;
   width:20%;
 }
-#map{
+/*#map{
   float:right;
   width:100%;
   height:100%;
-}
+}*/
 #logDiv{
   height: 75px;
   overflow-y:scroll;
@@ -105,6 +105,7 @@ It takes into acount the disposable area, so the android system bar doesn't over
 .maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='29' fill='%23bf4040' viewBox='0 0 29 29'%3E%3Cpath d='m10.5 14 4-8 4 8z'/%3E%3Cpath fill='%23ccc' d='m10.5 16 4 8 4-8z'/%3E%3C/svg%3E")}
 @media (-ms-high-contrast:active){.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='29' fill='%23fff' viewBox='0 0 29 29'%3E%3Cpath d='m10.5 14 4-8 4 8z'/%3E%3Cpath fill='%23999' d='m10.5 16 4 8 4-8z'/%3E%3C/svg%3E")}}
 @media (-ms-high-contrast:black-on-white){.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='29' viewBox='0 0 29 29'%3E%3Cpath d='m10.5 14 4-8 4 8z'/%3E%3Cpath fill='%23ccc' d='m10.5 16 4 8 4-8z'/%3E%3C/svg%3E")}}
+
 .maplibregl-user-location-dot,
 .maplibregl-user-location-dot:before {
   height:40px;
@@ -136,6 +137,7 @@ It takes into acount the disposable area, so the android system bar doesn't over
   box-shadow : none;
   left:+2;
 }
+
 /*gps*/
 #gps-control{
   padding: 2px;

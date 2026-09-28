@@ -1,4 +1,5 @@
 import { makePmtilesSource } from './capacitorPmTiles.js';
+import * as pmtiles from 'pmtiles';
 const config = await (await fetch('./config.json')).json();
 console.log(config)
 

@@ -6,7 +6,6 @@ export async function loadStyle(name) {
     const cfg = config.dataSources[name];
     if (!styleCfg) throw new Error(`Unknown style: ${name}`);    
     const parsed = await parseStyle(styleCfg.path, { fileName: cfg.file, protocol: cfg.protocol });
-    console.log(`Parsed style: ${name}`);console.log(parsed)
     return parseStyle(styleCfg.path, { fileName: cfg.file, protocol: cfg.protocol });
 }
 

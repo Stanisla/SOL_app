@@ -1,0 +1,16 @@
+{
+  "version": 8,
+  "name": "contour-lines",
+  "metadata": {"maputnik:renderer": "mbgljs"},
+  "layers": [
+    {
+      "id": "contour-lines",
+      "type": "line"
+    },    
+    {
+      "id": "contour-labels",
+      "type": "symbol"
+    }
+  ],
+  "id": "contour-lines"
+}

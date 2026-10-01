@@ -11,7 +11,6 @@ import { addControls } from './addControls.js';
 window.maplibregl = maplibregl
 // At start up application, copy data, styles...
 await beforeStart()
-console.log("test  vite")
 registerSource('osm')
 registerSource('dem')
 export const styleOsm = await loadStyle('osm');
@@ -22,7 +21,7 @@ const map = new maplibregl.Map({
     maxZoom: 24,
     maxPitch: 85,
     center: [-2.676, 42.84],
-    zoom: 11,
+    zoom: 11,    
     maplibreLogo: false,
     hash: true
 })

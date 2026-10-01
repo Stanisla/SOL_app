@@ -1,11 +1,12 @@
 import { styleOsm } from './index.js'
 import { parseStyle } from './styleParser.js';
 import { tileUrl} from './pmtilesLoader.js';
-import { getArchive } from './pmtilesLoader.js';
+import { setupContour } from './contour.js';
 
 //const header = await (await getArchive('dem')).getHeader();
 //window.header=header
 //const testStyle = await parseStyle('./styles/test_style.json', {})
+const styleContour= await parseStyle('./styles/contourLines.json')
 
 export async function addLayers(){
 
@@ -66,6 +67,56 @@ export async function addLayers(){
             'hillshade-exaggeration': 0.5
         }
      });
+    //Contour
+    const demSource=setupContour();
+    map.addSource('contourS',{
+            type: 'vector',
+            tiles: [
+                demSource.contourProtocolUrl({
+                    thresholds: {
+                        10: [100, 500],
+                        12: [20, 100],
+                        14: [10, 50],
+                        16: [5, 25],
+                    },
+                    contourLayer: 'contours',
+                    elevationKey: 'ele',
+                    levelKey: 'level',
+                }),
+            ],
+            minzoom: 10,
+            maxzoom: 17,
+    })
+    map.addLayer({
+            id: 'contour-lines',
+            type: 'line',
+            source: 'contourS',
+            'source-layer': 'contours',
+            paint: {
+                'line-color': '#b45502',
+                'line-width': ['match', ['get', 'level'], 1, 2, 1],
+            },
+        })
+    map.addLayer({
+            id: 'contour-labels',
+            type: 'symbol',
+            source: 'contourS',
+            'source-layer': 'contours',
+            filter: ['>', ['get', 'level'], 0],
+            layout: {
+                'symbol-placement': 'line',
+                'text-size': 10,
+                'text-field': ['concat', ['number-format', ['get', 'ele'], {}], 'm'],
+                'text-font': ['Noto Sans Bold'],
+                'text-pitch-alignment': 'viewport',
+            },
+            paint: {
+                'text-color': '#6d3300',
+                'text-halo-color': 'white',
+                'text-halo-width': 1,
+            },
+        })
+    
     //Ortofotos PNOA
     map.addSource('ortoPNOAsource',{
         type: "raster",
@@ -151,12 +202,13 @@ export function getLayers() {
         vector_local: { label: 'LocalPBF', typeLayer: 'group', style: styleOsm, order: 1, typeUser: 'public' },        
         o_std: { label: 'OpenStreetMap *', typeLayer: 'raster', style: null, order: 10, typeUser: 'public' },        
         ortoPNOA: { label: 'OrtoPNOA *', typeLayer: 'raster', style: null, order: 20, typeUser: 'public' },
-        spainSOM: { label: 'RelieveSom *', typeLayer: 'raster', style: null, order: 60, typeUser: 'public' },
-        wmtsLidar: { label: 'LidarOnLine *', typeLayer: 'raster', style: null, order: 70, typeUser: 'public' },
-        spainPEND: { label: 'spainPend *', typeLayer: 'raster', style: null, order: 80, typeUser: 'public' },
-        rasterIGN: { label: 'rasterIGN *', typeLayer: 'raster', style: null, order: 90, typeUser: 'public' },
+        spainSOM: { label: 'RelieveSom *', typeLayer: 'raster', style: null, order: 30, typeUser: 'public' },
+        wmtsLidar: { label: 'LidarOnLine *', typeLayer: 'raster', style: null, order: 40, typeUser: 'public' },
+        spainPEND: { label: 'spainPend *', typeLayer: 'raster', style: null, order: 50, typeUser: 'public' },
+        rasterIGN: { label: 'rasterIGN *', typeLayer: 'raster', style: null, order: 60, typeUser: 'public' },
         demRGBl: { label: 'DEMRaster', typeLayer: 'raster', style: null, order: 91, typeUser: 'public' },
-        dem_hillshade: { label: 'Hillshade', typeLayer: 'raster-dem', style: null, order: 92, typeUser: 'public' }
+        dem_hillshade: { label: 'Hillshade', typeLayer: 'raster-dem', style: null, order: 92, typeUser: 'public' },
+        curvas: { label: 'Curvas nivel', typeLayer: 'group', style: styleContour, order: 93, typeUser: 'public' },
         //test: { label: 'Test', typeLayer: 'group', style: testStyle, order: 99, typeUser: 'public' }
     };
     return { mapBaseLayer, mapOverLayer };

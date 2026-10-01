@@ -1,6 +1,7 @@
 import { map } from './mapInstance.js';
 import { GridControlPanel } from './GridControlPanel.js';
 import { getLayers, addLayers } from './layers.js'
+import { tileUrl } from './pmtilesLoader.js';
 import { OpacityControl } from './opacity.js'
 import { gpsControl } from './gpsControl.js';
 
@@ -20,7 +21,22 @@ export async function addControls(){
         trackUserLocation: true
     });
     panel.addControlAt(Geolocate, 1, 2)
-    await addOpacityControl()
+    // 3D control
+    map.addSource('terrain3D', {
+        type: 'raster-dem',
+        tiles: [tileUrl('dem', '.webp')],
+        tileSize: 512,
+        encoding: 'terrarium', // or 'mapbox', depending on how you generated it
+        maxzoom: 11 // use the real max zoom of your file
+    });
+    const Terrain = new maplibregl.TerrainControl({
+        source: 'terrain3D',
+        exaggeration: 2
+    })
+    panel.addControlAt(Terrain,1,3)
+    // Opacity control
+    const Opacity= await createOpacityControl()
+    panel.addControlAt(Opacity, 2, 1);
     //Add scale
     map.addControl(new maplibregl.ScaleControl());
     // gpsControl Overrides gps arrow and shows gps data
@@ -30,7 +46,8 @@ export async function addControls(){
 }
 
 
-async function addOpacityControl() {
+
+async function createOpacityControl() {
     const { mapBaseLayer, mapOverLayer } = getLayers();
     // OpacityControl
     let Opacity = new OpacityControl({
@@ -41,6 +58,5 @@ async function addOpacityControl() {
     });
     await addLayers()
     //map.addControl(Opacity, 'top-right');
-    panel.addControlAt(Opacity, 2, 1);
-
+    return Opacity
 }

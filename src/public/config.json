@@ -1,8 +1,10 @@
 {
   "dataSources": {
-    "osm": { "folder": "osm", "file": "mapExample.pmtiles", "protocol": "vector" }
+    "osm": { "folder": "osm", "file": "mapExample.pmtiles", "protocol": "vector" },
+    "dem": {"folder": "dem","file": "demExample.pmtiles","protocol": "relief"
+    }
   },
   "styles": {
-    "osm":     { "path": "./styles/osm.json",     "source": "osm" }
+    "osm":{ "path": "./styles/osm.json", "source": "osm" }
   }
 }

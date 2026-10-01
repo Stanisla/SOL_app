@@ -257,7 +257,7 @@ export class OpacityControl {
     }
     //Set opacity
     #setOp(layerId, type, v_opacity) {
-
+        //console.log(layerId,type,v_opacity)
         var opacityType = ""
         if (type == "group") {
             var layers = this.#readedJson[layerId].layers;
@@ -298,7 +298,11 @@ export class OpacityControl {
         if (type == 'hillshade') {
             map.setPaintProperty(layerId, 'hillshade-exaggeration', v_opacity)
         }
-        if (type != 'group' && type != 'hillshade') {
+        if (type == 'raster-dem') {
+            map.setPaintProperty(layerId, 'hillshade-exaggeration', v_opacity)
+        }
+        
+        if (type != 'group' && type != 'hillshade' && type != 'raster-dem') {
             if (!type.endsWith('-opacity')) {
                 type = type + '-opacity'
             }

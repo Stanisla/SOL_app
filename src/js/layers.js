@@ -1,7 +1,7 @@
 import { styleOsm } from './index.js'
 import { parseStyle } from './styleParser.js';
 import { tileUrl} from './pmtilesLoader.js';
-import { setupContour } from './contour.js';
+import { setupContour, ignoreMissingDemTiles } from './contour.js';
 
 //const header = await (await getArchive('dem')).getHeader();
 //window.header=header
@@ -69,6 +69,7 @@ export async function addLayers(){
      });
     //Contour
     const demSource=setupContour();
+    map.on('error', ignoreMissingDemTiles);
     map.addSource('contourS',{
             type: 'vector',
             tiles: [
@@ -93,7 +94,7 @@ export async function addLayers(){
             source: 'contourS',
             'source-layer': 'contours',
             paint: {
-                'line-color': '#b45502',
+                'line-color': '#6d3300',
                 'line-width': ['match', ['get', 'level'], 1, 2, 1],
             },
         })
